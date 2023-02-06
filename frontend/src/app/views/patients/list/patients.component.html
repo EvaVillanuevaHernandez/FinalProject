@@ -1,0 +1,40 @@
+<h1>Patients</h1>
+
+<div class="container">
+    <button (click)="Add()" class="Add">Add</button>
+
+    <div class="card">
+        <div class="card-header">
+            <h3>Patients</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Second Surname</th>
+                        <th>Dni</th>
+                        <th>History</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let p of patients" class="text-center">
+                        <td>{{p.name}}</td>
+                        <td>{{p.surname}}</td>
+                        <td>{{p.secondSurname}}</td>
+                        <td>{{p.dni}}</td>
+                        <td>{{p.history}}</td>
+                        <td>
+                            <button class="btn btn-warning">Edit</button>
+                            <button class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,67 @@
+.form-prescriptions {
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width:50%;
+    height:50%;
+    position:relative;
+    border: 1px solid #A88A1E;
+    border-radius: 1ex;
+}
+
+.form-control-prescriptions{
+    display: flex;
+    border-radius: 1ex;
+    background-color: #DEE7E5;
+    border: 1px solid #706e6e;
+    width: 90%;
+    height: 30px;
+}
+
+.container-pr{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.patient-name {
+    padding-top: 10px;
+    font-family: sans-serif;
+    font-size: 160%;
+    color: #3d4a55;
+}
+
+
+.delete-button {
+    border-radius: 1ex;
+    border: none;
+  
+    background-color: #DEE7E5;
+    color: #3d4e5b;
+
+}
+
+.update-button {
+    border-radius: 1ex;
+    border: none;
+   
+    background-color: #DEE7E5;
+    color: #3d4e5b;
+}
+
+
+.cabecera {
+    display: flex;
+    margin-left: 80px;
+    margin-top: 10px;
+    align-items: baseline;
+}
+
+.form-control-posology {
+    width: 90%;
+    height: 60px;
+}
+
+.patient-image{
+width: 20ex;
+height: 10ex;
+}

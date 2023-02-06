@@ -1,0 +1,80 @@
+body {
+  background-color: #DEE7E5;
+  position: relative;
+  min-height: 100vh;
+}
+.prescriptions{
+  margin-left:  20%;
+  margin-right: 50px;
+}
+.title{
+  margin-bottom: 10px;
+}
+.container-search-bar{
+  display: flex;
+  align-self: flex-start;
+  flex-flow: row;
+  border-radius: 1ex;
+  border: 2px solid #A88A1E;
+  
+}
+.search-bar{
+ border-radius: 1ex;
+  flex-flow: row;
+  background-color: #DEE7E5;
+  border: none;
+  width: 790px;
+}
+
+.new-prescription{
+  margin-top: 20px;
+}
+.button-new-prescription{
+  border-radius: 1ex;
+  border: 1px solid #9F73AB;
+  background-color: #DEE7E5; 
+}
+
+.remove-button{
+  border-radius: 1ex;
+  border: 1px solid #9F73AB;
+  background-color: #DEE7E5; 
+}
+.group-item{
+  display:flex;
+  flex-flow: column wrap;
+  border: 2px solid #9F73AB;
+  ;
+  border-radius: 1ex;
+  justify-content: flex-start ;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.eye{
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-start ;
+  color: black;
+}
+.edit{
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-start ;
+  color: black;
+}
+
+.info{
+  border: 1px solid #9F73AB;
+  border-radius: 1ex;
+  justify-content: flex-start ;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+#elipse5 {
+  z-index: -1;
+  position: absolute;
+  bottom: 0px;
+  right: 5px;
+}
