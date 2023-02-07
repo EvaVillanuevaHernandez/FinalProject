@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PatientsComponent } from './views/patients/list/patients.component';
+import { ListDoctorComponent } from './views/doctors/list.doctor/list.doctor.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AddPatientComponent } from './views/patients/add/add.patient/add.patient.component';
 import { EditPatientComponent } from './views/patients/edit/edit.patient/edit.patient.component';
@@ -34,6 +35,7 @@ registerLocaleData(en);
   declarations: [
     AppComponent,
     PatientsComponent,
+    ListDoctorComponent,
     HeaderComponent,
     AddPatientComponent,
     EditPatientComponent,

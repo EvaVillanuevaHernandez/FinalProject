@@ -6,27 +6,23 @@ import { DoctorService } from 'src/app/shared/services/doctor.service';
 @Component({
   selector: 'app-list.doctor',
   templateUrl: './list.doctor.component.html',
-  styleUrls: ['./list.doctor.component.scss']
+  styleUrls: ['./list.doctor.component.scss'],
 })
 export class ListDoctorComponent {
-
   doctors: Array<Doctor> = [];
-
 
   constructor(private router: Router, private doctorService: DoctorService) {
     this.getAllDoctors();
   }
 
   getAllDoctors() {
-    this.doctorService.getAllDoctors().subscribe(data => {
+    this.doctorService.getAllDoctors().subscribe((data) => {
       this.doctors = data;
-      console.log(this.doctors)
+      console.log(this.doctors);
     });
   }
 
-  
-  Add(){
-    this.router.navigate(["adddoctor"]);
+  Add() {
+    this.router.navigate(['adddoctor']);
   }
-
 }
