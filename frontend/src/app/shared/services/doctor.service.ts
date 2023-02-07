@@ -10,11 +10,11 @@ export class DoctorService {
 
   constructor(private http: HttpClient) { }
 
-  getAllPatients() {
+  getAllDoctors() {
     return this.http.get<Array<Doctor>>(this.endpoint);
   }
 
-  getPatient(id: number) {
+  getDoctor(id: number) {
     return this.http.get<Doctor>(this.endpoint + "/" + id);
   }
 
