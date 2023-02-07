@@ -23,6 +23,6 @@ export class ListDoctorComponent {
   }
 
   Add() {
-    this.router.navigate(['adddoctor']);
+    this.router.navigate(['addDoctor']);
   }
 }

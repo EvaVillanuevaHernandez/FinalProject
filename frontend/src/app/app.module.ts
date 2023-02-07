@@ -11,7 +11,9 @@ import { PatientsComponent } from './views/patients/list/patients.component';
 import { ListDoctorComponent } from './views/doctors/list.doctor/list.doctor.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AddPatientComponent } from './views/patients/add/add.patient/add.patient.component';
+import { AddDoctorComponent } from './views/doctors/add.doctor/add.doctor.component';
 import { EditPatientComponent } from './views/patients/edit/edit.patient/edit.patient.component';
+import { EditDoctorComponent } from './views/doctors/edit.doctor/edit.doctor.component';
 import { HomeComponent } from './views/home/home/home.component';
 import { PatientService } from './shared/services/patient.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -38,7 +40,9 @@ registerLocaleData(en);
     ListDoctorComponent,
     HeaderComponent,
     AddPatientComponent,
+    AddDoctorComponent,
     EditPatientComponent,
+    EditDoctorComponent,
     HomeComponent,
     LoginPageComponent,
     LoginFormComponent
