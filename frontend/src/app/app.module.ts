@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PatientsComponent } from './views/patients/list/patients.component';
 import { HeaderComponent } from './components/header/header.component';
-import { AddPatientComponent } from './views/patients/add/add.patient/add.patient.component';
+import { AddPatientComponent } from './views/patients/add/add.patient.component';
 import { EditPatientComponent } from './views/patients/edit/edit.patient/edit.patient.component';
 import { HomeComponent } from './views/home/home/home.component';
 import { PatientService } from './shared/services/patient.service';
@@ -27,6 +27,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NavComponent } from './components/nav/nav.component';
+import { NzTableModule } from 'ng-zorro-antd/table';
 
 registerLocaleData(en);
 
@@ -39,17 +41,21 @@ registerLocaleData(en);
     EditPatientComponent,
     HomeComponent,
     LoginPageComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+  
     NzButtonModule,
     NzFormModule,
+    NzTableModule,
     NzIconModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    
     
     NgxPermissionsModule.forRoot(),
          BrowserAnimationsModule,

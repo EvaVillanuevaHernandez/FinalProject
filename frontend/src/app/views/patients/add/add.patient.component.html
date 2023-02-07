@@ -1,12 +1,16 @@
-<div class="container">
-    <h2>Add Patient</h2>
+<app-nav></app-nav>
+<div class="container" >
+   <div class="form">
     <form [formGroup]="patientForm" (ngSubmit)="submit()">
+    <div class="picture">
+        <img class="p-image" *ngIf="image == ''" src="assets/images/patient.png" alt="placeholder.png">    
+    </div>   
+        <img src="{{'data:{{typeImg}};base64,' + image}}" alt="">
+        <input id="inputFile" type="file" formControlName="file" (change)="file($event)">
+     
 
-        <!-- <img *ngIf="image == ''" src="assets/images/placeholder.png" alt="placeholder.png">
-      <img src="{{'data:{{typeImg}};base64,' + image}}" alt="">
-      <input id="inputFile" type="file" formControlName="file" (change)="file($event)">
       <div class="alert-danger" *ngIf="filePatient?.invalid && (filePatient?.dirty || filePatient?.touched)">
-      </div> -->
+      </div>
         <input type="text" formControlName="dni" [(ngModel)]="dni" placeholder="Patient's DNI">
         <div class="alert-danger" *ngIf="dniPatient?.invalid && (dniPatient?.dirty || dniPatient?.touched)">
             <div class="container-error-message" *ngIf="dniPatient?.errors?.['required']">
@@ -58,7 +62,9 @@
                   Patient's medical history must have more than 5 characters.
               </div>
           </div>
-
-        <button type="submit" class="btn-send" [disabled]="!patientForm.valid">Send</button>
-
+          <button type="submit" class="btn-send" [disabled]="!patientForm.valid">Send</button>
     </form>
+    
+   </div>
+    
+    <router-outlet></router-outlet>
