@@ -103,7 +103,7 @@ export class EditDoctorComponent implements OnInit {
           'Your doctor has been deleted correctly.',
           'success'
         ).then(function () {
-          window.location.href = 'admin-home';
+          window.location.href = 'listdoctors';
         });
       }
     });
@@ -134,7 +134,7 @@ export class EditDoctorComponent implements OnInit {
             'Your doctor has been updated correctly.',
             'success'
           ).then(function () {
-            window.location.href = 'admin-home';
+            window.location.href = 'listdoctors';
           });
         }
       });
