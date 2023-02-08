@@ -19,6 +19,7 @@ import { PatientService } from './shared/services/patient.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoginPageComponent } from './views/login-page/login-page.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
+import { NavComponent } from './components/nav/nav.component';
 
 import { NgxPermissionsModule } from 'ngx-permissions';
 import { authInterceptorProviders } from './shared/_helpers/auth.interceptor';
@@ -45,7 +46,8 @@ registerLocaleData(en);
     EditDoctorComponent,
     HomeComponent,
     LoginPageComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,14 +58,14 @@ registerLocaleData(en);
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    
+
     NgxPermissionsModule.forRoot(),
-         BrowserAnimationsModule,
-         IconsProviderModule,
-         NzLayoutModule,
-         NzMenuModule
+    BrowserAnimationsModule,
+    IconsProviderModule,
+    NzLayoutModule,
+    NzMenuModule,
   ],
   providers: [authInterceptorProviders, { provide: NZ_I18N, useValue: en_US }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
