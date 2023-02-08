@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzFormModule } from 'ng-zorro-antd/form';
-import { NzIconModule } from 'ng-zorro-antd/icon';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -47,11 +46,10 @@ registerLocaleData(en);
   imports: [
     BrowserModule,
     AppRoutingModule,
-  
+   
     NzButtonModule,
     NzFormModule,
     NzTableModule,
-    NzIconModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,

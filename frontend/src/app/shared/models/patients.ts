@@ -11,6 +11,7 @@ image: SafeResourceUrl;
 doctor: string;
 typeImg?: string;
 
+
 constructor(dni: string, history: string, name: string, surname: string, secondSurname: string, image: SafeResourceUrl, doctor: string, typeImg: string) {
     this.dni = dni;
     this.history = history;

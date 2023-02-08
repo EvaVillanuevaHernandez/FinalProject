@@ -1,17 +1,17 @@
+<!-- <head>
+    <link href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
+</head> -->
 
 <app-nav></app-nav>
 <h1>Patients</h1>
-
 <div class="container">
-   
-
     <div class="card">
         <div class="card-header">
             <h3>Patients</h3>
             <button (click)="Add()" class="Add">Add</button>
         </div>
         <div class="card-body" >
-            <table class="table table-striped" id="table" name="table" width="600" cellspacing="3" cellpadding="3" style="font-size: 10pt">
+            <table class="table table-striped" id="table" name="table" width="900" cellspacing="3" cellpadding="3" style="font-size: 15pt">
                 <thead>
                     <tr>
                         <th>Image</th>
@@ -31,10 +31,15 @@
                         <td>{{p.secondSurname}}</td>
                         <td>{{p.dni}}</td>
                         <td>{{p.history}}</td>
-                        <td>
+                        <td>      
+                            <button class="edit">
+                            <img src="../../../../assets/images/editing.png" alt="edit"class="edit" [routerLink]="['/editpatient']"/>
+                            </button>
+
+                            <button class="delete"  (click)="delete()">
+                            <img src="../../../../assets/images/delete.png" alt="delete"class="delete"/>
+                            </button>
                             
-                            <button class="btn-edit">Edit</button>
-                            <button class="btn-delete" style="margin-left: 10px;">Delete</button>
                         </td>
                     </tr>
                 </tbody>

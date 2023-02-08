@@ -27,24 +27,69 @@ export class AddPatientComponent {
     this.patientForm = this.createForm();
   }
 
-  get dniPatient() { return this.patientForm.get('dni'); }
-  get historyPatient() { return this.patientForm.get('history'); }
-  get namePatient() { return this.patientForm.get('name'); }
-  get surnamePatient() { return this.patientForm.get('surname'); }
-  get secondSurnamePatient() { return this.patientForm.get('secondSurname'); }
-  get doctorPatient() { return this.patientForm.get('doctor'); }
-  get filePatient() { return this.patientForm.get('file'); }
+  get dniPatient() {
+    return this.patientForm.get('dni');
+  }
+
+  get historyPatient() {
+    return this.patientForm.get('history');
+  }
+
+  get namePatient() {
+    return this.patientForm.get('name');
+  }
+
+  get surnamePatient() {
+    return this.patientForm.get('surname');
+  }
+
+  get secondSurnamePatient() {
+    return this.patientForm.get('secondSurname');
+  }
+
+  get doctorPatient() {
+    return this.patientForm.get('doctor');
+  }
+
+  get filePatient() {
+    return this.patientForm.get('file');
+  }
 
 
   createForm() {
     return new FormGroup({
-      dni: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(10), Validators.pattern('^[0-9,]*$')]),
-      file: new FormControl('', [Validators.required]),
-      history: new FormControl('', [Validators.required, Validators.minLength(5)]),
-      name: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(30)]),
-      surname: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(30)]),
-      secondSurname: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(30)]),
-      doctor: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(30)]),
+      dni: new FormControl('',
+        [Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(10),
+        Validators.pattern('^[0-9,]*$')]),
+
+      file: new FormControl('',
+        [Validators.required]),
+
+      history: new FormControl('',
+        [Validators.required,
+        Validators.minLength(5)]),
+
+      name: new FormControl('',
+        [Validators.required,
+        Validators.minLength(2),
+        Validators.maxLength(30)]),
+
+      surname: new FormControl('',
+        [Validators.required,
+        Validators.minLength(2),
+        Validators.maxLength(30)]),
+
+      secondSurname: new FormControl('',
+        [Validators.required,
+        Validators.minLength(2),
+        Validators.maxLength(30)]),
+
+      doctor: new FormControl('',
+        [Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(30)]),
     });
   }
 
@@ -70,13 +115,14 @@ export class AddPatientComponent {
 
       let patientData: Patient = {
         dni: this.dni,
-        image: '',
         history: this.history,
         name: this.name,
         surname: this.surname,
         secondSurname: this.secondSurname,
+        image: '',
         doctor: ''
-      }
+      };
+
       Swal.fire({
         title: 'Are you sure?',
         icon: 'warning',
@@ -92,7 +138,7 @@ export class AddPatientComponent {
             'Your apartment has been created correctly.',
             'success'
           ).then(function () {
-            window.location.href = 'admin-home';
+            window.location.href = 'listpatients';
           })
         }
       })
