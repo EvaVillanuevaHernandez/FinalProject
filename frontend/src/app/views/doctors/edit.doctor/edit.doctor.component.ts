@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
 })
 export class EditDoctorComponent implements OnInit {
   doctorForm: FormGroup;
-  collegiateNum: number = 0;
+  collegiateNum: string = '';
   name: string = '';
   surname: string = '';
   secondSurname: string = '';
@@ -68,7 +68,7 @@ export class EditDoctorComponent implements OnInit {
         Validators.required,
         Validators.minLength(1),
         Validators.maxLength(3),
-        Validators.pattern('^[0-9]*$'),
+        // Validators.pattern('^[0-9]*$'),
       ]),
     });
   }

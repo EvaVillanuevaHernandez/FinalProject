@@ -8,14 +8,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PatientsComponent } from './views/patients/list/patients.component';
 import { HeaderComponent } from './components/header/header.component';
+import { AddDoctorComponent } from './views/doctors/add.doctor/add.doctor.component';
 import { AddPatientComponent } from './views/patients/add/add.patient.component';
 import { EditPatientComponent } from './views/patients/edit/edit.patient/edit.patient.component';
+import { EditDoctorComponent } from './views/doctors/edit.doctor/edit.doctor.component';
 import { HomeComponent } from './views/home/home/home.component';
+import { ListDoctorComponent } from './views/doctors/list.doctor/list.doctor.component';
 import { PatientService } from './shared/services/patient.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoginPageComponent } from './views/login-page/login-page.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
-
+import { FormGroup } from '@angular/forms';
 import { NgxPermissionsModule } from 'ngx-permissions';
 import { authInterceptorProviders } from './shared/_helpers/auth.interceptor';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
@@ -34,7 +37,10 @@ registerLocaleData(en);
 @NgModule({
   declarations: [
     AppComponent,
+    AddDoctorComponent,
+    ListDoctorComponent,
     PatientsComponent,
+    EditDoctorComponent,
     HeaderComponent,
     AddPatientComponent,
     EditPatientComponent,
@@ -46,13 +52,13 @@ registerLocaleData(en);
   imports: [
     BrowserModule,
     AppRoutingModule,
-   
     NzButtonModule,
     NzFormModule,
     NzTableModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+   
     
     
     NgxPermissionsModule.forRoot(),

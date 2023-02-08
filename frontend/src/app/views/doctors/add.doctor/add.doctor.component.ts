@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
 })
 export class AddDoctorComponent {
   doctorForm: FormGroup;
-  collegiateNum: number = 0;
+  collegiateNum: string = '';
   name: string = '';
   surname: string = '';
   secondSurname: string = '';
