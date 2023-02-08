@@ -56,10 +56,10 @@ public class AuthController {
 
 	  @PostMapping("/signin")
 	  public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
-//		  byte[] username = Base64.getDecoder().decode(loginRequest.getUsername());
-//		  String decodeUsername = new String(username);
-//		  byte[] password = Base64.getDecoder().decode(loginRequest.getPassword());
-//		  String decodePassword = new String(password);
+		  byte[] username = Base64.getDecoder().decode(loginRequest.getUsername());
+		  String decodeUsername = new String(username);
+		  byte[] password = Base64.getDecoder().decode(loginRequest.getPassword());
+		  String decodePassword = new String(password);
 
 	    Authentication authentication = authenticationManager.authenticate(
 	        new UsernamePasswordAuthenticationToken(decodeUsername /*loginRequest.getUsername()*/, decodePassword/*loginRequest.getPassword()*/));
