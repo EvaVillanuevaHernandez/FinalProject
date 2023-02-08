@@ -8,9 +8,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PatientsComponent } from './views/patients/list/patients.component';
+import { ListDoctorComponent } from './views/doctors/list.doctor/list.doctor.component';
 import { HeaderComponent } from './components/header/header.component';
-import { AddPatientComponent } from './views/patients/add/add.patient.component';
+import { AddPatientComponent } from './views/patients/add/add.patient/add.patient.component';
+import { AddDoctorComponent } from './views/doctors/add.doctor/add.doctor.component';
 import { EditPatientComponent } from './views/patients/edit/edit.patient/edit.patient.component';
+import { EditDoctorComponent } from './views/doctors/edit.doctor/edit.doctor.component';
 import { HomeComponent } from './views/home/home/home.component';
 import { PatientService } from './shared/services/patient.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -27,8 +30,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
-import { NavComponent } from './components/nav/nav.component';
-import { NzTableModule } from 'ng-zorro-antd/table';
 
 registerLocaleData(en);
 
@@ -36,26 +37,25 @@ registerLocaleData(en);
   declarations: [
     AppComponent,
     PatientsComponent,
+    ListDoctorComponent,
     HeaderComponent,
     AddPatientComponent,
+    AddDoctorComponent,
     EditPatientComponent,
+    EditDoctorComponent,
     HomeComponent,
     LoginPageComponent,
-    LoginFormComponent,
-    NavComponent
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-  
     NzButtonModule,
     NzFormModule,
-    NzTableModule,
     NzIconModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    
     
     NgxPermissionsModule.forRoot(),
          BrowserAnimationsModule,

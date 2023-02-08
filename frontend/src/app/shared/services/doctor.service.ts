@@ -10,39 +10,38 @@ export class DoctorService {
 
   constructor(private http: HttpClient) { }
 
-  getAllPatients() {
+  getAllDoctors() {
     return this.http.get<Array<Doctor>>(this.endpoint);
   }
 
-  getPatient(id: number) {
+  getDoctor(id: number) {
     return this.http.get<Doctor>(this.endpoint + "/" + id);
   }
 
-  /*
-  postPatient(patient: Doctor, file: File) {
+  
+  postDoctor(doctor: Doctor/*, file: File*/) {
     let data = new FormData();
-    data.append("dni", patient.dni);
-    data.append("history", patient.history);
-    data.append("name", patient.name);
-    data.append("surname", patient.surname);
-    data.append("secondSurname", patient.secondSurname);
-    data.append("file", file);
-    data.append("doctor", patient.doctor);
-    this.http.post<Patient>(this.endpoint, data).subscribe(response => { }, error => { console.log(error) });
+    data.append("dni", doctor.dni);
+    data.append("name", doctor.name);
+    data.append("surname", doctor.surname);
+    data.append("secondSurname", doctor.secondSurname);
+    //data.append("file", file);
+    data.append("collegiateNum", doctor.collegiateNum.toString());
+    this.http.post<Doctor>(this.endpoint, data).subscribe(response => { }, error => { console.log(error) });
   }
 
-  putPatient(patient: Doctor, id: number) {
+  putDoctor(doctor: Doctor, id: number) {
     let data = new FormData();
-    data.append("dni", patient.dni);
-    data.append("history", patient.history);
-    data.append("name", patient.name);
-    data.append("surname", patient.surname);
-    data.append("secondSurname", patient.secondSurname);
+    data.append("dni", doctor.dni);
+    data.append("name", doctor.name);
+    data.append("surname", doctor.surname);
+    data.append("secondSurname", doctor.secondSurname);
+    data.append("collegiateNum", doctor.collegiateNum.toString());
     this.http.put(this.endpoint + "/" + id, data).subscribe(response => { }, error => { console.log(error) });
   }
 
-  deletePatient(id: number) {
+  deleteDoctor(id: number) {
     this.http.delete(this.endpoint + "/" + id).subscribe(data => { });
   }
-  */
+  
 }
