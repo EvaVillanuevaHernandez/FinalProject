@@ -1,40 +1,46 @@
+
+<app-nav></app-nav>
 <h1>Patients</h1>
 
 <div class="container">
-    <button (click)="Add()" class="Add">Add</button>
+   
 
     <div class="card">
         <div class="card-header">
             <h3>Patients</h3>
+            <button (click)="Add()" class="Add">Add</button>
         </div>
-        <div class="card-body">
-            <table class="table table-hover">
+        <div class="card-body" >
+            <table class="table table-striped" id="table" name="table" width="600" cellspacing="3" cellpadding="3" style="font-size: 10pt">
                 <thead>
                     <tr>
+                        <th>Image</th>
                         <th>Name</th>
                         <th>Surname</th>
-                        <th>Second Surname</th>
+                        <th>Surname</th>
                         <th>Dni</th>
                         <th>History</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody >
                     <tr *ngFor="let p of patients" class="text-center">
+                        
+                        <td><img mat-card-image src="{{'data:{{typeImg}};base64,' + p.image}}" alt="" class="p-img"></td>
                         <td>{{p.name}}</td>
                         <td>{{p.surname}}</td>
                         <td>{{p.secondSurname}}</td>
                         <td>{{p.dni}}</td>
                         <td>{{p.history}}</td>
                         <td>
-                            <button class="btn btn-warning">Edit</button>
-                            <button class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+                            
+                            <button class="btn-edit">Edit</button>
+                            <button class="btn-delete" style="margin-left: 10px;">Delete</button>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
+        
     </div>
-
 </div>
-
 <router-outlet></router-outlet>
