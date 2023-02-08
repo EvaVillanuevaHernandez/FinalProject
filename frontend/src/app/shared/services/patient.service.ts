@@ -41,6 +41,10 @@ export class PatientService {
   }
 
   deletePatient(id: number) {
-    this.http.delete(this.endpoint + "/" + id).subscribe(data => { });
-  }
+  this.http.delete(this.endpoint + "/" + id).subscribe(
+    data => { },
+    error => { console.log(error) }
+  );
+}
+
 }
