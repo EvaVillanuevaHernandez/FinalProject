@@ -67,7 +67,7 @@ export class EditDoctorComponent implements OnInit {
       collegiateNum: new FormControl('', [
         Validators.required,
         Validators.minLength(1),
-        Validators.maxLength(3),
+        Validators.maxLength(30),
         // Validators.pattern('^[0-9]*$'),
       ]),
     });

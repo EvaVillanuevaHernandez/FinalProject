@@ -64,8 +64,8 @@ export class AddDoctorComponent {
       collegiateNum: new FormControl('', [
         Validators.required,
         Validators.minLength(1),
-        Validators.maxLength(3),
-        Validators.pattern('^[0-9]*$'),
+        Validators.maxLength(30),
+        // Validators.pattern('^[0-9]*$'),
       ]),
     });
   }
