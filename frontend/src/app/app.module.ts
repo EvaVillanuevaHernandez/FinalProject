@@ -31,7 +31,9 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NavComponent } from './components/nav/nav.component';
 import { NzTableModule } from 'ng-zorro-antd/table';
-import { SliderComponent } from './components/slider/slider.component';
+import { AddPrescriptionsComponent } from './views/prescriptions/add.prescriptions/add.prescriptions.component';
+import { EditPrescriptionsComponent } from './views/prescriptions/edit.prescriptions/edit.prescriptions.component';
+import { ListPrescriptionsComponent } from './views/prescriptions/list.prescriptions/list.prescriptions.component';
 
 registerLocaleData(en);
 
@@ -49,7 +51,9 @@ registerLocaleData(en);
     LoginPageComponent,
     LoginFormComponent,
     NavComponent,
-    SliderComponent
+    AddPrescriptionsComponent,
+    EditPrescriptionsComponent,
+    ListPrescriptionsComponent,
   ],
   imports: [
     BrowserModule,

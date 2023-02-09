@@ -28,7 +28,7 @@
                         <td>{{d.dni}}</td>
                         <td>
                             <button class="btn btn-warning" routerLink="/edit-doctor/{{d.id}}">Edit</button>
-                            <button class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+                            <button class="btn btn-danger" style="margin-left: 10px;" (click)="delete(d.id)">Delete</button>
                         </td>
                     </tr>
                 </tbody>
