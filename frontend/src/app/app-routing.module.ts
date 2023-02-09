@@ -9,10 +9,11 @@ import { EditDoctorComponent } from './views/doctors/edit.doctor/edit.doctor.com
 import { ListPrescriptionsComponent } from './views/prescriptions/list.prescriptions/list.prescriptions.component';
 import { EditPrescriptionsComponent } from './views/prescriptions/edit.prescriptions/edit.prescriptions.component';
 import { AddPrescriptionsComponent } from './views/prescriptions/add.prescriptions/add.prescriptions.component';
+import { HomeComponent } from './views/home/home/home.component';
 
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/login' },
+  { path: '', pathMatch: 'full', redirectTo: '/home' },
   { path: 'listpatients', component: PatientsComponent },
   { path: 'listdoctors', component: ListDoctorComponent },
   { path: 'listprescriptions', component: ListPrescriptionsComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'addpatient', component: AddPatientComponent },
   { path: 'addDoctor', component: AddDoctorComponent },
   { path: 'addprescription', component: AddPrescriptionsComponent },
+  {path : 'home', component: HomeComponent},
 ];
 
 @NgModule({

@@ -34,6 +34,7 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { AddPrescriptionsComponent } from './views/prescriptions/add.prescriptions/add.prescriptions.component';
 import { EditPrescriptionsComponent } from './views/prescriptions/edit.prescriptions/edit.prescriptions.component';
 import { ListPrescriptionsComponent } from './views/prescriptions/list.prescriptions/list.prescriptions.component';
+import { SliderComponent } from './components/slider/slider.component';
 
 registerLocaleData(en);
 
@@ -54,6 +55,7 @@ registerLocaleData(en);
     AddPrescriptionsComponent,
     EditPrescriptionsComponent,
     ListPrescriptionsComponent,
+    SliderComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,7 +66,6 @@ registerLocaleData(en);
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-   
     
     
     NgxPermissionsModule.forRoot(),
