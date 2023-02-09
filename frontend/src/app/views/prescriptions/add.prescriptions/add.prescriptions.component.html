@@ -40,7 +40,7 @@
         </div>
 
         <select formControlName="doctor" [(ngModel)]="doctor" placeholder="Prescription's Doctor">
-            <option (change)="onChangeDoctor(i-1)" *ngFor="let d of doctor, index as i" value={{d.id}}>{{d.name}}
+            <option (change)="onChangeDoctor(i-1)" *ngFor="let d of doctor2, index as i" value={{d.id}}>{{d.name}}
             </option>
         </select>
         <!-- <div class="alert-danger"
@@ -51,7 +51,8 @@
         </div> -->
 
         <select formControlName="patient" [(ngModel)]="patient" placeholder="Prescription's Patient">
-            <option (change)="onChangePatient(i-1)" *ngFor="let p of patient, index as i" value={{p.id}}>{{p.name}}</option>
+            <option (change)="onChangePatient(i-1)" *ngFor="let p of patient2, index as i" value={{p.id}}>{{p.name}}
+            </option>
         </select>
         <div class="alert-danger"
             *ngIf="patientPrescription?.invalid && (patientPrescription?.dirty || patientPrescription?.touched)">
@@ -74,3 +75,4 @@
         <button type="submit" class="btn-send" [disabled]="!prescriptionForm.valid">Send</button>
 
     </form>
+</div>

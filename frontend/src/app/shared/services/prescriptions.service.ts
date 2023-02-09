@@ -25,9 +25,9 @@ export class PrescriptionsService {
     data.append("date", prescription.date.toString());
     data.append("medicine", prescription.medicine);
     data.append("posology", prescription.posology);
-    data.append("doctor_id)", prescription.doctor!.toString());
+    data.append("doctor", prescription.doctor.toString());
     //data.append("file", file);
-    data.append("patient_id", prescription.patient!.toString());
+    data.append("patient", prescription.patient.toString());
     this.http.post<Prescriptions>(this.endpoint, data).subscribe(response => { }, error => { console.log(error) });
   }
 
@@ -36,9 +36,9 @@ export class PrescriptionsService {
     data.append("date", prescription.date.toString());
     data.append("medicine", prescription.medicine);
     data.append("posology", prescription.posology);
-    data.append("doctor_id)", prescription.doctor!.toString());
+    data.append("doctor", prescription.doctor!.toString());
     //data.append("file", file);
-    data.append("patient_id", prescription.patient!.toString());
+    data.append("patient", prescription.patient!.toString());
     this.http.put(this.endpoint + "/" + id, data).subscribe(response => { }, error => { console.log(error) });
   }
 

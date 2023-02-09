@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgIterable, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SafeResourceUrl } from '@angular/platform-browser';
 import { Router } from '@angular/router';
@@ -24,8 +24,10 @@ export class AddPrescriptionsComponent {
   medicine: string = '';
   posology: string = '';
   doctor: Array<Doctor> = [];
+  doctor2: NgIterable<Doctor> = [];
   doctor_index: number = 0;
   patient: Array<Patient> = [];
+  patient2: NgIterable<Patient> = [];
   patient_index: number = 0;
 
   constructor(private prescriptionService: PrescriptionsService, private patienService: PatientService, private doctorService: DoctorService) {
@@ -36,11 +38,14 @@ export class AddPrescriptionsComponent {
     console.log("check1 " + this.doctor_index)
     this.doctor_index = index;
     console.log(this.doctor_index)
+    this.doctor2 = this.doctor;
+    console.log(this.doctor)
   }
 
   onChangePatient(index: number) {
     this.patient_index = index;
     console.log(this.patient_index)
+    this.patient2 = this.patient;
   }
 
   get datePrescription() {
@@ -92,10 +97,10 @@ export class AddPrescriptionsComponent {
 
   ngOnInit(): void {
     this.patienService.getAllPatients().subscribe(response => {
-      this.patient = response;
+      this.patient2 = response;
     });
     this.doctorService.getAllDoctors().subscribe(response => {
-      this.doctor = response;
+      this.doctor2 = response;
       console.log(response);
     });
   }

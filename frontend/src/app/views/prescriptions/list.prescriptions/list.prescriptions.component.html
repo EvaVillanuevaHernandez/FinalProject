@@ -28,7 +28,7 @@
                         <td>{{p.patient.name}}</td>
                         <td>
                             <button class="btn btn-warning" routerLink="/edit-prescription/{{p.id}}">Edit</button>
-                            <button class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+                            <button class="btn btn-danger" style="margin-left: 10px;" (click)="delete(p.id)">Delete</button>
                         </td>
                     </tr>
                 </tbody>
