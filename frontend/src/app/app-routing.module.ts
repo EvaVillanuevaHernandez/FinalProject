@@ -10,6 +10,7 @@ import { ListPrescriptionsComponent } from './views/prescriptions/list.prescript
 import { EditPrescriptionsComponent } from './views/prescriptions/edit.prescriptions/edit.prescriptions.component';
 import { AddPrescriptionsComponent } from './views/prescriptions/add.prescriptions/add.prescriptions.component';
 import { HomeComponent } from './views/home/home/home.component';
+import { SettingComponent } from './views/setting/setting.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'addDoctor', component: AddDoctorComponent },
   { path: 'addprescription', component: AddPrescriptionsComponent },
   {path : 'home', component: HomeComponent},
+  {path : 'setting', component: SettingComponent},
 ];
 
 @NgModule({

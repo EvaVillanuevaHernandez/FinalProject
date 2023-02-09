@@ -35,6 +35,7 @@ import { AddPrescriptionsComponent } from './views/prescriptions/add.prescriptio
 import { EditPrescriptionsComponent } from './views/prescriptions/edit.prescriptions/edit.prescriptions.component';
 import { ListPrescriptionsComponent } from './views/prescriptions/list.prescriptions/list.prescriptions.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { SettingComponent } from './views/setting/setting.component';
 
 registerLocaleData(en);
 
@@ -56,6 +57,7 @@ registerLocaleData(en);
     EditPrescriptionsComponent,
     ListPrescriptionsComponent,
     SliderComponent,
+    SettingComponent
   ],
   imports: [
     BrowserModule,
