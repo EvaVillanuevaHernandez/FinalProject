@@ -1,0 +1,50 @@
+.container {
+  max-width: 900px;
+  padding: 16px;
+  margin: 10px auto;
+  // text-align: center;
+  position: absolute;
+  top: 10%;
+  left: 20%;
+}
+
+.delete{
+  background-color: transparent;
+  border: none;
+}
+
+.edit{
+  background-color: transparent;
+  border: none;
+}
+
+img {
+  width: 20px;
+  height: 20px;
+}
+.Add {
+  margin-left: 10px;
+}
+
+.p-img {
+  width: 60px;
+  height: 75px;
+
+}
+
+
+table th {
+  text-align: center;
+}
+
+.table td, .table th {
+  padding: 0.75rem;
+  vertical-align: middle; 
+  border-top: 1px solid #dee2e6;
+}
+
+.card-body {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 0; 
+}
