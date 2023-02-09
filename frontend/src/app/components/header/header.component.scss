@@ -1,5 +1,5 @@
 header {
-    background-color: #7994A6;
+    background-color: #bcc7ce;
     color: white;
     padding: 1em;
   
@@ -14,12 +14,16 @@ header {
     }
 
     #logo{
-        width: 60px;
+        width: 80px;
     }
   
-    .header-icon {
-      font-size: 20px;
-      cursor: pointer;
+    #getIn{
+        width: 30px;
+        margin-right: 5px;
     }
-  }
+    .txt{
+    color: #213F5C;
+    margin-right: 65%;
+    }
+}
   
