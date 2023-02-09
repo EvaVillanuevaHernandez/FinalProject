@@ -1,0 +1,25 @@
+header {
+    background-color: #7994A6;
+    color: white;
+    padding: 1em;
+  
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .header-logo {
+      height: 20px;
+    }
+
+    #logo{
+        width: 60px;
+    }
+  
+    .header-icon {
+      font-size: 20px;
+      cursor: pointer;
+    }
+  }
+  

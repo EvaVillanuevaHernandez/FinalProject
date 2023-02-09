@@ -31,6 +31,7 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NavComponent } from './components/nav/nav.component';
 import { NzTableModule } from 'ng-zorro-antd/table';
+import { SliderComponent } from './components/slider/slider.component';
 
 registerLocaleData(en);
 
@@ -47,7 +48,8 @@ registerLocaleData(en);
     HomeComponent,
     LoginPageComponent,
     LoginFormComponent,
-    NavComponent
+    NavComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
