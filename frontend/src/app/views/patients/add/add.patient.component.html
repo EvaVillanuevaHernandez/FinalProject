@@ -2,14 +2,16 @@
 <div class="container" >
     <h2>Add Patient</h2>
     <form [formGroup]="patientForm" (ngSubmit)="submit()">
-    
-        <div class="picture">
-        <img class="p-image" *ngIf="image == ''" src="assets/images/patient.png" alt="placeholder.png">    
-        </div> 
 
+        <img *ngIf="image == ''" src="../../../../assets/images/patient.png" alt="patient.png">
         <img src="{{'data:{{typeImg}};base64,' + image}}" alt="">
         <input id="inputFile" type="file" formControlName="file" (change)="file($event)">
-        
+        <div class="alert-danger" *ngIf="filePatient?.invalid && (filePatient?.dirty || filePatient?.touched)">
+            <div class="container-error-message" *ngIf="filePatient?.errors?.['required']">
+                Patient's image required.
+            </div>
+        </div>
+
         <input type="text" formControlName="dni" [(ngModel)]="dni" placeholder="Patient's DNI">
         <div class="alert-danger" *ngIf="dniPatient?.invalid && (dniPatient?.dirty || dniPatient?.touched)">
             <div class="container-error-message" *ngIf="dniPatient?.errors?.['required']">
@@ -50,6 +52,11 @@
                 Patient's second surname must have more than 2 characters.
             </div>
         </div>
+
+        <select formControlName="doctor" [(ngModel)]="doctor" placeholder="Patient's Doctor">
+            <option (change)="onChangeDoctor(i-1)" *ngFor="let d of doctor2, index as i" value={{d.id}}>{{d.name}}
+            </option>
+        </select>
         
         <textarea formControlName="history" [(ngModel)]="history" placeholder="Patient's medical history" rows="5">
         </textarea>
@@ -65,4 +72,4 @@
         <button type="submit" class="btn-send" [disabled]="!patientForm.valid">Send</button>
 
     </form>
-    
+</div>    

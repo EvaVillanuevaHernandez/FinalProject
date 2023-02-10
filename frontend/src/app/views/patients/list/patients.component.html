@@ -1,14 +1,10 @@
-<!-- <head>
-    <link href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
-</head> -->
 
 <app-nav></app-nav>
-<h1>Patients</h1>
 <div class="container">
     <div class="card">
         <div class="card-header">
             <h3>Patients</h3>
-            <button (click)="Add()" class="Add">Add</button>
+            <button (click)="Add()" class="Add">Add patient</button>
         </div>
         <div class="card-body" >
             <table class="table table-striped" id="table" name="table" width="900" cellspacing="3" cellpadding="3" style="font-size: 15pt">
@@ -20,6 +16,7 @@
                         <th>Surname</th>
                         <th>Dni</th>
                         <th>History</th>
+                        <th>Doctor</th>
                     </tr>
                 </thead>
                 <tbody >
@@ -31,12 +28,13 @@
                         <td>{{p.secondSurname}}</td>
                         <td>{{p.dni}}</td>
                         <td>{{p.history}}</td>
+                        <td>{{p.doctor.name}}</td>
                         <td>      
                             <button class="edit">
-                            <img src="../../../../assets/images/editing.png" alt="edit"class="edit" [routerLink]="['/editpatient']"/>
+                            <img src="../../../../assets/images/editing.png" alt="edit"class="edit" routerLink="/edit-patient/{{p.id}}"/>
                             </button>
 
-                            <button class="delete"  (click)="delete()">
+                            <button class="delete"  (click)="delete(p.id)">
                             <img src="../../../../assets/images/delete.png" alt="delete"class="delete"/>
                             </button>
                             

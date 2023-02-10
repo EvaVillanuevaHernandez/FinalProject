@@ -6,6 +6,7 @@ import { Patient } from '../models/patients';
   providedIn: 'root'
 })
 export class PatientService {
+
   endpoint: string = "http://" + window.location.hostname + ":8080/patients";
 
   constructor(private http: HttpClient) { }
@@ -26,17 +27,21 @@ export class PatientService {
     data.append("surname", patient.surname);
     data.append("secondSurname", patient.secondSurname);
     data.append("file", file);
-    data.append("doctor", patient.doctor);
+    data.append("doctor", patient.doctor.toString());
     this.http.post<Patient>(this.endpoint, data).subscribe(response => { }, error => { console.log(error) });
   }
 
-  putPatient(patient: Patient, id: number) {
+  putPatient(patient: Patient, id: number,file?: File) {
     let data = new FormData();
     data.append("dni", patient.dni);
     data.append("history", patient.history);
     data.append("name", patient.name);
     data.append("surname", patient.surname);
     data.append("secondSurname", patient.secondSurname);
+    data.append("doctor", patient.doctor!.toString());
+    if(file != null || file != ''){
+      data.append("file", file!);
+    }
     this.http.put(this.endpoint + "/" + id, data).subscribe(response => { }, error => { console.log(error) });
   }
 

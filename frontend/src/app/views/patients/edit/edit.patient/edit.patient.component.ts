@@ -1,8 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {  NgIterable } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Patient } from 'src/app/shared/models/patients';
+import { DoctorService } from 'src/app/shared/services/doctor.service';
+import { Doctor } from 'src/app/shared/models/doctors';
 import { PatientService } from 'src/app/shared/services/patient.service';
 import Swal from 'sweetalert2';
 
@@ -16,14 +19,29 @@ export class EditPatientComponent implements OnInit {
   dni: string = '';
   name: string = '';
   history: string = '';
+  doctor: Array<Doctor> = [];
+  doctor2: NgIterable<Doctor> = [];
+  doctor_index: number = 0;
   surname: string = '';
   secondSurname: string = '';
   image: SafeResourceUrl = '';
   typeImg: string = '';
   dataImg: File = new File([''], "oldImage.");
 
-  constructor(private activatedRoute: ActivatedRoute, private patientService: PatientService) {
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private doctorService: DoctorService, 
+    private patientService: PatientService
+    ) {
     this.patientForm = this.createForm();
+  }
+
+  onChangeDoctor(index: number) {
+    console.log('check1 ' + this.doctor_index);
+    this.doctor_index = index;
+    console.log(this.doctor_index);
+    this.doctor2 = this.doctor;
+    console.log(this.doctor);
   }
 
   get dniPatient() { return this.patientForm.get('dni'); }
@@ -36,18 +54,52 @@ export class EditPatientComponent implements OnInit {
 
   createForm() {
     return new FormGroup({
-      dni: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(10), Validators.pattern('^[0-9,]*$')]),
-      file: new FormControl('', [Validators.required]),
-      history: new FormControl('', [Validators.required, Validators.minLength(5)]),
-      name: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(30)]),
-      surname: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(30)]),
-      secondSurname: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(30)]),
-      doctor: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(30)]),
+      dni: new FormControl('',
+       [Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(10),
+        Validators.pattern('^[0-9,]*$')]),
+    
+      history: new FormControl('',
+       [Validators.required,
+        Validators.minLength(5)]),
+
+      name: new FormControl('',
+       [Validators.required, 
+        Validators.minLength(2),
+        Validators.maxLength(30)]),
+
+      surname: new FormControl('',
+       [Validators.required,
+        Validators.minLength(2),
+        Validators.maxLength(30)]),
+
+      secondSurname: new FormControl('',
+       [Validators.required, Validators.minLength(2), 
+       Validators.maxLength(30)]),
+      
     });
   }
 
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    this.doctorService.getAllDoctors().subscribe((response) => {
+      this.doctor2 = response;
+      console.log(response);
+    });
+
+    const id = this.activatedRoute.snapshot.params['id'];
+    let patientData = this.patientService.getPatient(id);
+    patientData.forEach((data) => {
+      this.dni = data.dni;
+      this.name = data.name;
+      this.surname = data.surname;
+      this.secondSurname = data.secondSurname;
+      this.history = data.history;
+      this.image = data.image;
+      this.typeImg = data.typeImg!;
+    });
+  }
 
   file(event: any) {
     const file = event.target.files[0];
@@ -64,33 +116,9 @@ export class EditPatientComponent implements OnInit {
   }
 
 
-  delete() {
-    const id = this.activatedRoute.snapshot.params['id'];
-    Swal.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#DAD2BC',
-      cancelButtonColor: '#69747C',
-      confirmButtonText: 'Yes'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        this.patientService.deletePatient(id);
-        Swal.fire(
-          'Done!',
-          'Your apartment has been deleted correctly.',
-          'success'
-        ).then(function () {
-          window.location.href = 'admin-home';
-        })
-      }
-    })
-  }
-
   submit() {
     if (this.patientForm.valid) {
-
+      const id = this.activatedRoute.snapshot.params['id'];
       let patientData: Patient = {
         dni: this.dni,
         image: '',
@@ -98,7 +126,7 @@ export class EditPatientComponent implements OnInit {
         name: this.name,
         surname: this.surname,
         secondSurname: this.secondSurname,
-        doctor: ''
+        doctor: this.doctor[this.doctor_index],
       }
       Swal.fire({
         title: 'Are you sure?',

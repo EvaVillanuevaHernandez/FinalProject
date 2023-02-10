@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Patient } from 'src/app/shared/models/patients';
 import { PatientService } from 'src/app/shared/services/patient.service';
 import { StorageService } from 'src/app/shared/services/storage.service';
@@ -12,33 +12,17 @@ import Swal from 'sweetalert2';
 })
 
 export class PatientsComponent {
-  idPatient: number = 0;
   patients: Array<Patient> = [];
-  PatientData: Patient = {
-    dni: "",
-    name: '',
-    image: '',
-    surname: '',
-    secondSurname: " ",
-    history: "",
-    doctor: ''
-  }
+  
 
-  constructor(private activatedRoute: ActivatedRoute,private router: Router, private patientService: PatientService,private storage: StorageService) {
+  constructor(private router: Router,private PatientService: PatientService) {
     this.getAllPatients();
 
   }
-  // ngOnInit() {
-  //   this.idPatient = +this.activatedRoute.snapshot.paramMap.get('id')!;
-  //   this.patientService.getPatient(this.idPatient).subscribe(
-  //     data => {
-  //       this.PatientData = data.
-  //     }
-  //   )
-  // }
+
 
   getAllPatients() {
-    this.patientService.getAllPatients().subscribe(data => {
+    this.PatientService.getAllPatients().subscribe(data => {
       this.patients = data;
     });
   }
@@ -47,11 +31,7 @@ export class PatientsComponent {
     this.router.navigate(["addpatient"]);
   }
 
-  selectPatient(id: number) {
-    this.idPatient = id;
-  }
-
-  delete() {
+  delete(id:any) {
     Swal.fire({
       title: 'Are you sure you want to delete the patient? ?',
       text: "You won't be able to revert this!",
@@ -62,17 +42,18 @@ export class PatientsComponent {
       confirmButtonText: 'Yes'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.patientService.deletePatient(this.idPatient);
+        this.PatientService.deletePatient(id);
         Swal.fire(
           'Done!',
           'Your patient has been deleted correctly.',
           'success'
         ).then(function () {
           window.location.href = 'listpatients'
-        })
+        });
       }
-    })
+    });
   } 
 
 }
+
 

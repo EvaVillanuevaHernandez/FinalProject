@@ -11,6 +11,7 @@ import { EditPrescriptionsComponent } from './views/prescriptions/edit.prescript
 import { AddPrescriptionsComponent } from './views/prescriptions/add.prescriptions/add.prescriptions.component';
 import { HomeComponent } from './views/home/home/home.component';
 import { SettingComponent } from './views/setting/setting.component';
+import { EditPatientComponent } from './views/patients/edit/edit.patient/edit.patient.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'listprescriptions', component: ListPrescriptionsComponent },
   {path: 'edit-doctor/:id', component: EditDoctorComponent},
   {path: 'edit-prescription/:id', component: EditPrescriptionsComponent},
+  {path: 'edit-patient/:id', component: EditPatientComponent},
   { path: 'login', component: LoginPageComponent },
   { path: 'addpatient', component: AddPatientComponent },
   { path: 'addDoctor', component: AddDoctorComponent },

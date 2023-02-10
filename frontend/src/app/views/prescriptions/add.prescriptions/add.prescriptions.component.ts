@@ -18,7 +18,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./add.prescriptions.component.scss']
 })
 export class AddPrescriptionsComponent {
-  
+
   prescriptionForm: FormGroup;
   date: Date = new Date();
   medicine: string = '';

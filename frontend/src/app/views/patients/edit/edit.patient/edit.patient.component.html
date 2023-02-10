@@ -1,77 +1,72 @@
 <app-nav></app-nav>
 <div class="container">
- 
-        <form [formGroup]="patientForm" (ngSubmit)="submit()">
-
-            <div class="picture">
-                <img class="p-image" *ngIf="image == ''" src="assets/images/patient.png" alt="placeholder.png">
+    <h2>Edit patient</h2>
+    <form [formGroup]="patientForm" (ngSubmit)="submit()">
+  
+      <img *ngIf="image == ''" src="../../../../assets/images/patient.png" alt="patient.png">
+    <img src="{{'data:{{typeImg}};base64,' + image}}" alt="">
+    <input id="inputFile" type="file" formControlName="file" (change)="file($event)">
+    <div class="alert-danger" *ngIf="filePatient?.invalid && (filePatient?.dirty || filePatient?.touched)">
+    </div>
+  
+    <input type="text" formControlName="dni" [(ngModel)]="dni" placeholder="Patient's DNI">
+    <div class="alert-danger" *ngIf="dniPatient?.invalid && (dniPatient?.dirty || dniPatient?.touched)">
+        <div class="container-error-message" *ngIf="dniPatient?.errors?.['required']">
+            Patient's DNI required.
+        </div>
+        <div class="container-error-message" *ngIf="dniPatient?.errors?.['minlength']">
+            Patient's DNI must have more than 5 characters.
+        </div>
+    </div>
+  
+  
+    <input type="text" formControlName="name" [(ngModel)]="name" placeholder="Patient's name">
+    <div class="alert-danger" *ngIf="namePatient?.invalid && (namePatient?.dirty || namePatient?.touched)">
+        <div class="container-error-message" *ngIf="namePatient?.errors?.['required']">
+            Patient's name required.
+        </div>
+        <div class="container-error-message" *ngIf="namePatient?.errors?.['minlength']">
+            Patient's name must have more than 2 characters.
+        </div>
+    </div>
+  
+    <input type="text" formControlName="surname" [(ngModel)]="surname" placeholder="Patient's surname">
+    <div class="alert-danger" *ngIf="surnamePatient?.invalid && (surnamePatient?.dirty || surnamePatient?.touched)">
+        <div class="container-error-message" *ngIf="surnamePatient?.errors?.['required']">
+            Patient's surname is required.
+        </div>
+        <div class="container-error-message" *ngIf="surnamePatient?.errors?.['minlength']">
+            Patient's surname must have more than 2 characters.
+        </div>
+    </div>
+  
+      <select formControlName="doctor" [(ngModel)]="doctor" placeholder="Patient's Doctor">
+        <option (change)="onChangeDoctor(i-1)" *ngFor="let d of doctor2, index as i" value={{d.id}}>{{d.name}}
+        </option>
+      </select>
+  
+        <input type="text" formControlName="secondSurname" [(ngModel)]="secondSurname" placeholder="Patient's Second surname">
+        <div class="alert-danger" *ngIf="secondSurnamePatient?.invalid && (secondSurnamePatient?.dirty || secondSurnamePatient?.touched)">
+            <div class="container-error-message" *ngIf="secondSurnamePatient?.errors?.['required']">
+                Patient's second surname is required.
             </div>
-
-            <img src="{{'data:{{typeImg}};base64,' + image}}" alt="">
-            <input id="inputFile" type="file" formControlName="file" (change)="file($event)">
-
-
-            <div class="alert-danger" *ngIf="filePatient?.invalid && (filePatient?.dirty || filePatient?.touched)">
+            <div class="container-error-message" *ngIf="secondSurnamePatient?.errors?.['minlength']">
+                Patient's second surname must have more than 2 characters.
             </div>
-            <!-- <input type="text" formControlName="dni" [(ngModel)]="dni" placeholder="Patient's DNI"> -->
-            <input type="text" formControlName="dni" [(ngModel)]="dni" placeholder="Patient's dni">
-            <div class="alert-danger" *ngIf="dniPatient?.invalid && (dniPatient?.dirty || dniPatient?.touched)">
-                <div class="container-error-message" *ngIf="dniPatient?.errors?.['required']">
-                    Patient's DNI required.
-                </div>
-                <div class="container-error-message" *ngIf="dniPatient?.errors?.['minlength']">
-                    Patient's DNI must have more than 5 characters.
-                </div>
-            </div>
-
-
-            <input type="text" formControlName="name" [(ngModel)]="name" placeholder="Patient's name">
-            <div class="alert-danger" *ngIf="namePatient?.invalid && (namePatient?.dirty || namePatient?.touched)">
-                <div class="container-error-message" *ngIf="namePatient?.errors?.['required']">
-                    Patient's name required.
-                </div>
-                <div class="container-error-message" *ngIf="namePatient?.errors?.['minlength']">
-                    Patient's name must have more than 2 characters.
-                </div>
-            </div>
-
-            <input type="text" formControlName="surname" [(ngModel)]="surname" placeholder="Patient's surname">
-            <div class="alert-danger"
-                *ngIf="surnamePatient?.invalid && (surnamePatient?.dirty || surnamePatient?.touched)">
-                <div class="container-error-message" *ngIf="surnamePatient?.errors?.['required']">
-                    Patient's surname is required.
-                </div>
-                <div class="container-error-message" *ngIf="surnamePatient?.errors?.['minlength']">
-                    Patient's surname must have more than 2 characters.
-                </div>
-            </div>
-
-            <input type="text" formControlName="secondSurname" [(ngModel)]="secondSurname"
-                placeholder="Patient's Second surname">
-            <div class="alert-danger"
-                *ngIf="secondSurnamePatient?.invalid && (secondSurnamePatient?.dirty || secondSurnamePatient?.touched)">
-                <div class="container-error-message" *ngIf="secondSurnamePatient?.errors?.['required']">
-                    Patient's second surname is required.
-                </div>
-                <div class="container-error-message" *ngIf="secondSurnamePatient?.errors?.['minlength']">
-                    Patient's second surname must have more than 2 characters.
-                </div>
-            </div>
-
-            <textarea formControlName="history" [(ngModel)]="history" placeholder="Patient's medical history" rows="5">
-            </textarea>
-            <div class="alert-danger"
-                *ngIf="historyPatient?.invalid && (historyPatient?.dirty || historyPatient?.touched)">
-                <div class="container-error-message" *ngIf="historyPatient?.errors?.['required']">
-                    Patient's medical history required.
-                </div>
-                <div class="container-error-message" *ngIf="historyPatient?.errors?.['minlength']">
-                    Patient's medical history must have more than 5 characters.
-                </div>
-            </div>
-            <button type="submit" class="btn-send" [disabled]="!patientForm.valid">Send</button>
-        </form>
-        <button class="btn-send" (click)="delete()">Delete</button>
-
-
-    <router-outlet></router-outlet>
+        </div>
+  
+        <textarea formControlName="history" [(ngModel)]="history" placeholder="Patient's medical history" rows="5">
+        </textarea>
+          <div class="alert-danger" *ngIf="historyPatient?.invalid && (historyPatient?.dirty || historyPatient?.touched)">
+              <div class="container-error-message" *ngIf="historyPatient?.errors?.['required']">
+                  Patient's medical history required.
+              </div>
+              <div class="container-error-message" *ngIf="historyPatient?.errors?.['minlength']">
+                  Patient's medical history must have more than 5 characters.
+              </div>
+          </div>
+  
+      <button type="submit" class="btn-send" [disabled]="!patientForm.valid">Send</button>
+  
+    </form>
+</div>   

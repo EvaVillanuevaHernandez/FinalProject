@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgIterable, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SafeResourceUrl } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { Doctor } from 'src/app/shared/models/doctors';
 import { Patient } from 'src/app/shared/models/patients';
+import { DoctorService } from 'src/app/shared/services/doctor.service';
 import { PatientService } from 'src/app/shared/services/patient.service';
 import Swal from 'sweetalert2';
 
@@ -19,12 +21,24 @@ export class AddPatientComponent {
   surname: string = '';
   secondSurname: string = '';
   image: SafeResourceUrl = '';
-  doctor: string = '';
+  doctor: Array<Doctor> = [];
+  doctor2: NgIterable<Doctor> = [];
+  doctor_index: number = 0;
   typeImg: string = '';
   dataImg: File = new File([''], "oldImage.");
 
-  constructor(private patientService: PatientService) {
+  constructor(
+    private patientService: PatientService,
+    private doctorService: DoctorService) {
     this.patientForm = this.createForm();
+  }
+
+  onChangeDoctor(index: number) {
+    console.log("check1 " + this.doctor_index)
+    this.doctor_index = index;
+    console.log(this.doctor_index)
+    this.doctor2 = this.doctor;
+    console.log(this.doctor)
   }
 
   get dniPatient() {
@@ -62,10 +76,8 @@ export class AddPatientComponent {
         [Validators.required,
         Validators.minLength(5),
         Validators.maxLength(10),
-        Validators.pattern('^[0-9,]*$')]),
-
-      file: new FormControl('',
-        [Validators.required]),
+        // Validators.pattern('^[0-9,]*$')
+      ]),
 
       history: new FormControl('',
         [Validators.required,
@@ -88,15 +100,22 @@ export class AddPatientComponent {
 
       doctor: new FormControl('',
         [Validators.required,
-        Validators.minLength(5),
-        Validators.maxLength(30)]),
+        ]),
+
+      file: new FormControl('',
+       [Validators.required]),
     });
   }
 
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.doctorService.getAllDoctors().subscribe(response => {
+    this.doctor2 = response;
+    console.log(response);
+    });
+  }
 
-  file(event: any) {
+   file(event: any) {
     const file = event.target.files[0];
     this.dataImg = file;
     const reader = new FileReader();
@@ -119,10 +138,10 @@ export class AddPatientComponent {
         name: this.name,
         surname: this.surname,
         secondSurname: this.secondSurname,
+        doctor: this.doctor[this.doctor_index],
         image: '',
-        doctor: ''
+       
       };
-
       Swal.fire({
         title: 'Are you sure?',
         icon: 'warning',
