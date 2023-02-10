@@ -3,7 +3,7 @@
     <h2>Edit patient</h2>
     <form [formGroup]="patientForm" (ngSubmit)="submit()">
   
-      <img *ngIf="image == ''" src="../../../../assets/images/patient.png" alt="patient.png">
+    <img *ngIf="image == ''" src="../../../../assets/images/patient.png" alt="patient.png">
     <img src="{{'data:{{typeImg}};base64,' + image}}" alt="">
     <input id="inputFile" type="file" formControlName="file" (change)="file($event)">
     <div class="alert-danger" *ngIf="filePatient?.invalid && (filePatient?.dirty || filePatient?.touched)">

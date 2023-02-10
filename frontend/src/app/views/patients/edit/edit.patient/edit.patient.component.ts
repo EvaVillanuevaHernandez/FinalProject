@@ -26,7 +26,7 @@ export class EditPatientComponent implements OnInit {
   secondSurname: string = '';
   image: SafeResourceUrl = '';
   typeImg: string = '';
-  dataImg: File = new File([''], "oldImage.");
+  dataImg: File = new File([''], "oldFile.");
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -58,7 +58,8 @@ export class EditPatientComponent implements OnInit {
        [Validators.required,
         Validators.minLength(5),
         Validators.maxLength(10),
-        Validators.pattern('^[0-9,]*$')]),
+        // Validators.pattern('^[0-9,]*$')
+      ]),
     
       history: new FormControl('',
        [Validators.required,
@@ -143,7 +144,7 @@ export class EditPatientComponent implements OnInit {
             'Your apartment has been created correctly.',
             'success'
           ).then(function () {
-            window.location.href = 'admin-home';
+            window.location.href = 'listpatients';
           })
         }
       })

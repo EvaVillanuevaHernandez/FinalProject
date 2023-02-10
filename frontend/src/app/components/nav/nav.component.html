@@ -7,6 +7,7 @@
         <h1>Medical prescriptions</h1>
       </a>
     </div>
+   
     <ul nz-menu class="menu-sidebar" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
       <li nz-submenu nzOpen nzTitle="Utils" nzIcon="dashboard" style="font-size:15px;color:#1f4761">
         <ul>
@@ -54,10 +55,17 @@
   </nz-sider>
 
   <nz-header>
-    <div class="app-header">
+    <div class="app-header"> 
+     <div class="imglogo" >
+      <a>
+        <img src="../assets/images/logo1.png" alt="logo-1">
+        <h4 class="logo-txt" >Artemisa medical center</h4>
+      </a>
+     </div>
       <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
         <span class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></span>
       </span>
+      
     </div>
   </nz-header>
 

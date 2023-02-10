@@ -1,11 +1,8 @@
+<app-nav></app-nav>
 <div class="container">
   <h2>Edit Doctor</h2>
   <form [formGroup]="doctorForm" (ngSubmit)="submit()">
-      <!-- <img *ngIf="image == ''" src="assets/images/placeholder.png" alt="placeholder.png">
-    <img src="{{'data:{{typeImg}};base64,' + image}}" alt="">
-    <input id="inputFile" type="file" formControlName="file" (change)="file($event)">
-    <div class="alert-danger" *ngIf="fileDoctor?.invalid && (fileDoctor?.dirty || fileDoctor?.touched)">
-    </div> -->
+   
       <input type="text" formControlName="dni" [(ngModel)]="dni" placeholder="Doctor's DNI">
       <div class="alert-danger" *ngIf="dniDoctor?.invalid && (dniDoctor?.dirty || dniDoctor?.touched)">
           <div class="container-error-message" *ngIf="dniDoctor?.errors?.['required']">
@@ -70,5 +67,5 @@
 
       <button type="submit" class="btn-send" [disabled]="!doctorForm.valid" >Send</button>
   </form>
-  <button class="btn-send" (click)="delete()">Delete</button>
+  <!-- <button class="btn-send" (click)="delete()">Delete</button> -->
 </div>

@@ -90,3 +90,27 @@
     height: 100%;
   }
   
+  .imglogo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .imglogo a {
+    position:absolute;
+    display: flex;
+    align-items: center;
+    left:70%;
+    margin-top: 5%;
+  }
+  
+  .logo-txt {
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+    color: #DEE7E5;
+  }
+
+  img {
+    vertical-align: middle;
+    border-style: none;
+    width: 50px;
+}

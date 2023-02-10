@@ -1,12 +1,7 @@
+<app-nav></app-nav>
 <div class="container">
-  <h2>Add Doctor</h2>
+    <h2>Add Doctor</h2>
   <form [formGroup]="doctorForm" (ngSubmit)="submit()">
-
-      <!-- <img *ngIf="image == ''" src="assets/images/placeholder.png" alt="placeholder.png">
-    <img src="{{'data:{{typeImg}};base64,' + image}}" alt="">
-    <input id="inputFile" type="file" formControlName="file" (change)="file($event)">
-    <div class="alert-danger" *ngIf="fileDoctor?.invalid && (fileDoctor?.dirty || fileDoctor?.touched)">
-    </div> -->
 
       <input type="text" formControlName="dni" [(ngModel)]="dni" placeholder="Doctor's DNI">
       <div class="alert-danger" *ngIf="dniDoctor?.invalid && (dniDoctor?.dirty || dniDoctor?.touched)">
@@ -17,7 +12,6 @@
               Doctor's DNI must have more than 5 characters.
           </div>
       </div>
-
 
       <input type="text" formControlName="name" [(ngModel)]="name" placeholder="Doctor's name">
       <div class="alert-danger" *ngIf="nameDoctor?.invalid && (nameDoctor?.dirty || nameDoctor?.touched)">
@@ -59,17 +53,6 @@
           </div>
       </div>
       
-      <!-- <textarea formControlName="history" [(ngModel)]="history" placeholder="Patient's medical history" rows="5">
-      </textarea>
-        <div class="alert-danger" *ngIf="historyPatient?.invalid && (historyPatient?.dirty || historyPatient?.touched)">
-            <div class="container-error-message" *ngIf="historyPatient?.errors?.['required']">
-                Patient's medical history required.
-            </div>
-            <div class="container-error-message" *ngIf="historyPatient?.errors?.['minlength']">
-                Patient's medical history must have more than 5 characters.
-            </div>
-        </div> -->
-
       <button type="submit" class="btn-send" [disabled]="!doctorForm.valid">Send</button>
 
   </form>

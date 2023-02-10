@@ -1,12 +1,5 @@
 <div class="container">
-  <h2>Add Prescription</h2>
   <form [formGroup]="prescriptionForm" (ngSubmit)="submit()">
-
-    <!-- <img *ngIf="image == ''" src="assets/images/placeholder.png" alt="placeholder.png">
-  <img src="{{'data:{{typeImg}};base64,' + image}}" alt="">
-  <input id="inputFile" type="file" formControlName="file" (change)="file($event)">
-  <div class="alert-danger" *ngIf="filePrescription?.invalid && (filePrescription?.dirty || filePrescription?.touched)">
-  </div> -->
 
     <input type="text" formControlName="date" [(ngModel)]="date" placeholder="Prescription's DNI">
     <div class="alert-danger"
@@ -15,7 +8,6 @@
         Prescription's Date required.
       </div>
     </div>
-
 
     <input type="text" formControlName="medicine" [(ngModel)]="medicine" placeholder="Prescription's medicine">
     <div class="alert-danger"
@@ -43,12 +35,6 @@
       <option (change)="onChangeDoctor(i-1)" *ngFor="let d of doctor2, index as i" value={{d.id}}>{{d.name}}
       </option>
     </select>
-    <!-- <div class="alert-danger"
-          *ngIf="doctorPrescription?.invalid && (doctorPrescription?.dirty || doctorPrescription?.touched)">
-          <div class="container-error-message" *ngIf="doctorPrescription?.errors?.['required']">
-              Prescription's doctor is required.
-          </div>
-      </div> -->
 
     <select formControlName="patient" [(ngModel)]="patient" placeholder="Prescription's Patient">
       <option (change)="onChangePatient(i-1)" *ngFor="let p of patient2, index as i" value={{p.id}}>{{p.name}}
@@ -60,17 +46,6 @@
         Prescription's patient is required.
       </div>
     </div>
-
-    <!-- <textarea formControlName="history" [(ngModel)]="history" placeholder="Patient's medical history" rows="5">
-    </textarea>
-      <div class="alert-danger" *ngIf="historyPatient?.invalid && (historyPatient?.dirty || historyPatient?.touched)">
-          <div class="container-error-message" *ngIf="historyPatient?.errors?.['required']">
-              Patient's medical history required.
-          </div>
-          <div class="container-error-message" *ngIf="historyPatient?.errors?.['minlength']">
-              Patient's medical history must have more than 5 characters.
-          </div>
-      </div> -->
 
     <button type="submit" class="btn-send" [disabled]="!prescriptionForm.valid">Send</button>
 
