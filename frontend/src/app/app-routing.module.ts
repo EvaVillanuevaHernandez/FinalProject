@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'addDoctor', component: AddDoctorComponent },
   { path: 'addprescription', component: AddPrescriptionsComponent },
   {path : 'home', component: HomeComponent},
-  {path : 'setting', component: SettingComponent},
+  {path : 'settings', component: SettingComponent},
 ];
 
 @NgModule({

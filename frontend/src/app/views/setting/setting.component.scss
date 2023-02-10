@@ -1,42 +1,107 @@
 .login-img {
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    padding-top: 3%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  padding-top: 3%;
 }
 
 .img {
-    vertical-align: middle;
-    border-style: none;
-    width: 200px;
-    height: 200px;
-
+  vertical-align: middle;
+  border-style: none;
+  width: 200px;
+  height: 200px;
 }
 
-.elipse-4 {
-    z-index: -1;
+.back-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  img {
     position: absolute;
-    width: 350px;
-    bottom: 0px;
-    right: 0px;
-    
+    top:10px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    z-index: 2;
+  }
+}
+.elipse-4 {
+  z-index: 1;
+  position: absolute;
+  width: 350px;
+  bottom: 0px;
+  right: 0px;
 }
 
 .elipse-3 {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 30em;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 30em;
 }
 
-.elipse{
-    z-index: -1;
-    position: absolute;
-    top:0%;
+.elipse {
+  z-index: 1;
+  position: absolute;
+  top: 0%;
 }
 
-.text{
-    text-align: center;
-    justify-content: end;
-    margin-top: 20%;
+.text {
+  text-align: center;
+  justify-content: end;
+ margin-top: 0em;
 }
+
+.dark-mode {
+  background-color: #7C99AC;
+  color: white;
+  z-index: -2;
+}
+
+.dark-mode-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+}
+
+.dark-mode-switch {
+  display: inline-block;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  cursor: pointer;
+  position: relative;
+  padding-left: 30px;
+  margin-right: 15px;
+  color: #999;
+}
+
+label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid #999;
+}
+
+input[type="radio"]:checked + label:before {
+  background-color: #333;
+  border-color: #333;
+}
+
+input[type="radio"]:checked + label {
+  color: #333;
+}
+
+

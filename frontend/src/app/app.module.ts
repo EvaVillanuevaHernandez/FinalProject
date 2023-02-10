@@ -14,11 +14,9 @@ import { EditPatientComponent } from './views/patients/edit/edit.patient/edit.pa
 import { EditDoctorComponent } from './views/doctors/edit.doctor/edit.doctor.component';
 import { HomeComponent } from './views/home/home/home.component';
 import { ListDoctorComponent } from './views/doctors/list.doctor/list.doctor.component';
-import { PatientService } from './shared/services/patient.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { LoginPageComponent } from './views/login-page/login-page.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
-import { FormGroup } from '@angular/forms';
 import { NgxPermissionsModule } from 'ngx-permissions';
 import { authInterceptorProviders } from './shared/_helpers/auth.interceptor';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
@@ -36,6 +34,7 @@ import { EditPrescriptionsComponent } from './views/prescriptions/edit.prescript
 import { ListPrescriptionsComponent } from './views/prescriptions/list.prescriptions/list.prescriptions.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { SettingComponent } from './views/setting/setting.component';
+
 
 registerLocaleData(en);
 
@@ -57,7 +56,8 @@ registerLocaleData(en);
     EditPrescriptionsComponent,
     ListPrescriptionsComponent,
     SliderComponent,
-    SettingComponent
+    SettingComponent,
+    
   ],
   imports: [
     BrowserModule,
