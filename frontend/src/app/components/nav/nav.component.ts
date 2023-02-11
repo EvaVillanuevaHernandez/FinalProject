@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class NavComponent {
   isCollapsed = false;
 
+
   toggleCollapsed(): void {
     this.isCollapsed = !this.isCollapsed;
   }

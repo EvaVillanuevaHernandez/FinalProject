@@ -68,6 +68,7 @@ registerLocaleData(en);
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+   
     
     
     NgxPermissionsModule.forRoot(),
