@@ -9,7 +9,7 @@
     </div>
    
     <ul nz-menu class="menu-sidebar" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-      <li nz-submenu nzOpen nzTitle="Utils" nzIcon="dashboard" style="font-size:15px;color:#1f4761">
+      <li nz-submenu nzOpen nzTitle="Utils" nzIcon="plus" style="font-size:15px;color:#1f4761">
         <ul>
           <li nz-menu-item nzMatchRouter>
             <a routerLink="/listpatients">Patients</a>
@@ -19,12 +19,6 @@
           </li>
           <li nz-menu-item nzMatchRouter>
             <a>Profile</a>
-          </li>
-          <!-- <li nz-menu-item nzMatchRouter>
-            <a>Setting</a>
-          </li> -->
-          <li nz-menu-item nzMatchRouter>
-            <a>New user</a>
           </li>
           <li nz-menu-item nzMatchRouter>
             <a routerLink="/listdoctors">Doctors</a>
@@ -44,7 +38,8 @@
         </ul>
 
       </li>
-      <ul nz-submenu nzOpen nzTitle="Settings" nzIcon="ain" style="font-size:15px;color:#1f4761">
+      <ul nz-submenu nzOpen nzTitle="Settings"  nzIcon="setting" style="font-size:15px;color:#1f4761">
+
         <ul>
           <li nz-menu-item nzMatchRouter>
             <a routerLink="/settings">Options</a>
@@ -53,6 +48,11 @@
         <ul>
           <li nz-menu-item nzMatchRouter>
             <a routerLink="/support">Support</a>
+          </li>
+        </ul>
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a>New user</a>
           </li>
         </ul>
       </ul>
