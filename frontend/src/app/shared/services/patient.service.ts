@@ -38,7 +38,7 @@ export class PatientService {
     data.append("name", patient.name);
     data.append("surname", patient.surname);
     data.append("secondSurname", patient.secondSurname);
-    data.append("doctor", patient.doctor!.toString());
+    // data.append("doctor", patient.doctor!.toString());
     if(file != null || file != ''){
       data.append("file", file!);
     }
@@ -46,10 +46,7 @@ export class PatientService {
   }
 
   deletePatient(id: number) {
-  this.http.delete(this.endpoint + "/" + id).subscribe(
-    data => { },
-    error => { console.log(error) }
-  );
-}
+      this.http.delete(this.endpoint + "/" + id).subscribe(data => { });
+    }
 
 }

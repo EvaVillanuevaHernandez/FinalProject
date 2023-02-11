@@ -116,13 +116,13 @@ export class EditPatientComponent implements OnInit {
     };
   }
 
-
   submit() {
     if (this.patientForm.valid) {
       const id = this.activatedRoute.snapshot.params['id'];
       let patientData: Patient = {
         dni: this.dni,
         image: '',
+        typeImg: this.typeImg,
         history: this.history,
         name: this.name,
         surname: this.surname,
@@ -138,10 +138,14 @@ export class EditPatientComponent implements OnInit {
         confirmButtonText: 'Yes'
       }).then((result) => {
         if (result.isConfirmed) {
-          this.patientService.postPatient(patientData, this.dataImg);
+          if (this.dataImg.name != "oldImage.") {
+            this.patientService.putPatient(patientData, id, this.dataImg);
+          } else {
+            this.patientService.putPatient(patientData, id);
+          }
           Swal.fire(
             'Done!',
-            'Your apartment has been created correctly.',
+            'Your apartment has been updated correctly.',
             'success'
           ).then(function () {
             window.location.href = 'listpatients';
@@ -151,3 +155,4 @@ export class EditPatientComponent implements OnInit {
     }
   }
 }
+  
