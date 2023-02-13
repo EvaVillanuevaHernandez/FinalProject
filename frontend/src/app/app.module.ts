@@ -34,11 +34,16 @@ import { EditPrescriptionsComponent } from './views/prescriptions/edit.prescript
 import { ListPrescriptionsComponent } from './views/prescriptions/list.prescriptions/list.prescriptions.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { SettingComponent } from './views/setting/setting.component';
+import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import {GoogleLoginProvider,FacebookLoginProvider} from '@abacritt/angularx-social-login';
+import { SocialLoginComponent } from './components/social-login/social-login.component';
+
 
 
 registerLocaleData(en);
 
 @NgModule({
+
   declarations: [
     AppComponent,
     AddDoctorComponent,
@@ -51,6 +56,7 @@ registerLocaleData(en);
     HomeComponent,
     LoginPageComponent,
     LoginFormComponent,
+    SocialLoginComponent,
     NavComponent,
     AddPrescriptionsComponent,
     EditPrescriptionsComponent,
@@ -58,9 +64,12 @@ registerLocaleData(en);
     SliderComponent,
     SettingComponent,
     
+   
+    
   ],
   imports: [
     BrowserModule,
+    SocialLoginModule,
     AppRoutingModule,
     NzButtonModule,
     NzFormModule,
@@ -68,6 +77,7 @@ registerLocaleData(en);
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+
    
     
     
@@ -77,7 +87,28 @@ registerLocaleData(en);
          NzLayoutModule,
          NzMenuModule
   ],
-  providers: [authInterceptorProviders, { provide: NZ_I18N, useValue: en_US }],
+  providers: [authInterceptorProviders, {
+     provide: NZ_I18N,
+      useValue: en_US, 
+    
+    },
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '539129123038-inmamfqeg2ad40d5ur1kd5i6vd52d82f.apps.googleusercontent.com","project_id":"angular-377517","auth_uri":"https://accounts.google.com/o/oauth2/auth","token_uri":"https://oauth2.googleapis.com/token","auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs","client_secret":"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'
+            )
+          }
+        ],
+        onError: (err) => {
+          console.error(err);
+        }
+      } as SocialAuthServiceConfig,
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

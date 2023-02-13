@@ -12,22 +12,32 @@ import { AddPrescriptionsComponent } from './views/prescriptions/add.prescriptio
 import { HomeComponent } from './views/home/home/home.component';
 import { SettingComponent } from './views/setting/setting.component';
 import { EditPatientComponent } from './views/patients/edit/edit.patient/edit.patient.component';
-
+import { AuthGuard } from './shared/guard/auth.guard';
+import { SocialLoginComponent } from './components/social-login/social-login.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
   { path: 'listpatients', component: PatientsComponent },
   { path: 'listdoctors', component: ListDoctorComponent },
   { path: 'listprescriptions', component: ListPrescriptionsComponent },
-  {path: 'edit-doctor/:id', component: EditDoctorComponent},
-  {path: 'edit-prescription/:id', component: EditPrescriptionsComponent},
-  {path: 'edit-patient/:id', component: EditPatientComponent},
+  { path: 'loginsocial', component: SocialLoginComponent },
+  { path: 'edit-doctor/:id', component: EditDoctorComponent , canActivate: [AuthGuard],
+  data: {
+    role: 'ROLE_ADMIN'
+  }
+},
+  { path: 'edit-prescription/:id', component: EditPrescriptionsComponent},
+  { path: 'edit-patient/:id', component: EditPatientComponent},
   { path: 'login', component: LoginPageComponent },
   { path: 'addpatient', component: AddPatientComponent },
-  { path: 'addDoctor', component: AddDoctorComponent },
+  { path: 'addDoctor', component: AddDoctorComponent , canActivate: [AuthGuard],
+  data: {
+    role: 'ROLE_ADMIN'
+  }
+},
   { path: 'addprescription', component: AddPrescriptionsComponent },
-  {path : 'home', component: HomeComponent},
-  {path : 'settings', component: SettingComponent},
+  { path : 'home', component: HomeComponent},
+  { path : 'settings', component: SettingComponent},
 ];
 
 @NgModule({
