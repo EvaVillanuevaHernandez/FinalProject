@@ -12,6 +12,8 @@ import { AddPrescriptionsComponent } from './views/prescriptions/add.prescriptio
 import { HomeComponent } from './views/home/home/home.component';
 import { SettingComponent } from './views/setting/setting.component';
 import { EditPatientComponent } from './views/patients/edit/edit.patient/edit.patient.component';
+import { ProfileComponent } from './views/user/profile/profile.component';
+import { RegisterComponent } from './views/user/register/register.component';
 
 
 const routes: Routes = [
@@ -28,6 +30,8 @@ const routes: Routes = [
   { path: 'addprescription', component: AddPrescriptionsComponent },
   {path : 'home', component: HomeComponent},
   {path : 'settings', component: SettingComponent},
+  {path : 'register', component: RegisterComponent},
+  {path : 'profile/:id', component: ProfileComponent},
 ];
 
 @NgModule({

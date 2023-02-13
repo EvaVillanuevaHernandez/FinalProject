@@ -1,0 +1,47 @@
+<div class="container">
+  <h2>Add User</h2>
+  <form [formGroup]="userForm" (ngSubmit)="submit()">
+
+<input type="text" formControlName="email" [(ngModel)]="email" placeholder="User's Email">
+<div class="alert-danger" *ngIf="emailUser?.invalid && (emailUser?.dirty || emailUser?.touched)">
+    <div class="container-error-message" *ngIf="emailUser?.errors?.['required']">
+        User's Email required.
+    </div>
+    <div class="container-error-message" *ngIf="emailUser?.errors?.['minlength']">
+        User's email must have more than 2 characters.
+    </div>
+</div>
+
+
+<input type="text" formControlName="username" [(ngModel)]="username" placeholder="User's name">
+<div class="alert-danger" *ngIf="usernameUser?.invalid && (usernameUser?.dirty || usernameUser?.touched)">
+    <div class="container-error-message" *ngIf="usernameUser?.errors?.['required']">
+        User's username required.
+    </div>
+    <div class="container-error-message" *ngIf="usernameUser?.errors?.['minlength']">
+        User's username must have more than 2 characters.
+    </div>
+</div>
+
+<input type="text" formControlName="password" [(ngModel)]="password" placeholder="User's surname">
+<div class="alert-danger" *ngIf="passwordUser?.invalid && (passwordUser?.dirty || passwordUser?.touched)">
+    <div class="container-error-message" *ngIf="passwordUser?.errors?.['required']">
+        User's password is required.
+    </div>
+    <div class="container-error-message" *ngIf="passwordUser?.errors?.['minlength']">
+        User's password must have more than 2 characters.
+    </div>
+</div>
+
+<!-- <textarea formControlName="history" [(ngModel)]="history" placeholder="Patient's medical history" rows="5">
+</textarea>
+  <div class="alert-danger" *ngIf="historyPatient?.invalid && (historyPatient?.dirty || historyPatient?.touched)">
+      <div class="container-error-message" *ngIf="historyPatient?.errors?.['required']">
+          Patient's medical history required.
+      </div>
+      <div class="container-error-message" *ngIf="historyPatient?.errors?.['minlength']">
+          Patient's medical history must have more than 5 characters.
+      </div>
+  </div> -->
+
+<button type="submit" class="btn-send" [disabled]="!userForm.valid">Send</button>
