@@ -2,11 +2,11 @@ package com.eva.backend.entity.services;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 
+import com.eva.backend.entity.models.ITemplates;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.engine.util.JRLoader;
@@ -116,6 +116,76 @@ public class PatientServiceImpl implements IPatientService {
         }else{
             return ResponseEntity.noContent().build();
         }
+        return null;
+    }
+
+    @NotNull
+    @Override
+    public ResponseEntity<Resource> exportPrescription() {
+                try {
+                    final File file = ResourceUtils.getFile("classpath:Prescription.jasper");
+                    final File imgLogo = ResourceUtils.getFile("classpath:images/logosimple.png");
+                    final JasperReport report = (JasperReport) JRLoader.loadObject(file);
+
+                    final HashMap<String, Object> parameters = new HashMap<>();
+                    parameters.put("imgLogo", new FileInputStream(imgLogo));
+
+                    JasperPrint jasperPrint = JasperFillManager.fillReport(report, parameters, new JRBeanCollectionDataSource((Collection<?>) this.patientDao.avgmedicine()));
+                    byte[] reporte = JasperExportManager.exportReportToPdf(jasperPrint);
+                    String sdf = new SimpleDateFormat("dd/MM/YYYY").format(new Date());
+                    StringBuilder stringBuilder = new StringBuilder().append("PatientPDF:");
+                    ContentDisposition contentDisposition = ContentDisposition.builder("attachment")
+                            .filename(stringBuilder.append(Math.random() * 120)
+                                    .append("generateDate:")
+                                    .append(sdf)
+                                    .append(".pdf")
+                                    .toString())
+                            .build();
+                    HttpHeaders headers = new HttpHeaders();
+                    headers.setContentDisposition(contentDisposition);
+                    return ResponseEntity.ok().contentLength((long) reporte.length)
+                            .contentType(MediaType.APPLICATION_PDF)
+                            .headers(headers)
+                            .body(new ByteArrayResource(reporte));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+        return null;
+    }
+
+    @NotNull
+    @Override
+    public ResponseEntity<Resource> printPrescription(String dniP) {
+        Iterable<ITemplates> optPatient = this.patientDao.findByDni(dniP);
+            try {
+                final File file = ResourceUtils.getFile("classpath:PrintPrescription.jasper");
+                final File imgLogo = ResourceUtils.getFile("classpath:images/logosimple.png");
+
+                final JasperReport report = (JasperReport)  JRLoader.loadObject(file);
+                final HashMap<String, Object> parameters = new HashMap<>();
+                parameters.put("imgLogo",new FileInputStream(imgLogo));
+                parameters.put("dsPatient",new JRBeanCollectionDataSource((Collection<?>) this.patientDao.findByDni(dniP)));
+
+                JasperPrint jasperPrint = JasperFillManager.fillReport(report, parameters, new JREmptyDataSource());
+                byte[] reporte = JasperExportManager.exportReportToPdf(jasperPrint);
+                String sdf = (new SimpleDateFormat("dd/MM/yyyy")).format(new Date());
+                StringBuilder stringBuilder = new StringBuilder().append("PatientPDF:");
+                ContentDisposition contentDisposition = ContentDisposition.builder("attachment")
+                        .filename(stringBuilder.append(optPatient)
+                                .append("generateDate:")
+                                .append(sdf)
+                                .append(".pdf")
+                                .toString())
+                        .build();
+                HttpHeaders headers = new HttpHeaders();
+                headers.setContentDisposition(contentDisposition);
+                return ResponseEntity.ok().contentLength((long) reporte.length)
+                        .contentType(MediaType.APPLICATION_PDF)
+                        .headers(headers).body(new ByteArrayResource(reporte));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
         return null;
     }
 
