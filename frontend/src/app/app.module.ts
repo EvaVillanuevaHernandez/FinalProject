@@ -36,6 +36,7 @@ import { SliderComponent } from './components/slider/slider.component';
 import { SettingComponent } from './views/setting/setting.component';
 import { RegisterComponent } from './views/user/register/register.component';
 import { ProfileComponent } from './views/user/profile/profile.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 
 registerLocaleData(en);
@@ -61,6 +62,7 @@ registerLocaleData(en);
     SettingComponent,
     RegisterComponent,
     ProfileComponent,
+    SearchBarComponent,
     
   ],
   imports: [
