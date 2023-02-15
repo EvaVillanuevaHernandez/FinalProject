@@ -1,27 +1,26 @@
 <body [ngClass]="{'dark-mode': darkMode}">
-    <div class="back-container">
-        <img src="../../../assets/images/icons8-u-turn-to-left-30.png" alt="back" class="back" [routerLink]="['/listpatients']">
-    </div>
-    <div class="login-img">
-      <img src="../../../assets/images/logo2.png" alt="logo2" class="img">
-    </div>
-    <div class="elipse">
-      <img src="../../../assets/images/elipse3.png" alt="elipse-3" class="elipse-3">
-    </div>
-    <div class="elipse-4">
-      <img src="../../../assets/images/elipse4.png" alt="elipse-4" class="elipse-4">
-    </div>
- 
-    <div class="dark-mode-container">
-        <div class="dark-mode-switch">
-          <input type="radio" id="dark-mode-on" [checked]="darkMode" (click)="toggleDarkMode()">
-          <label for="dark-mode-on">Dark Mode</label>
-          <input type="radio" id="dark-mode-off" [checked]="!darkMode" (click)="toggleDarkMode()">
-          <label for="dark-mode-off">Light Mode</label>
-        </div>
-      </div>
+  <div class="back-container">
+    <img src="../../../assets/images/icons8-u-turn-to-left-30.png" alt="back" class="back"
+      [routerLink]="['/listpatients']">
+  </div>
+  <div class="login-img">
+    <img src="../../../assets/images/logo2.png" alt="logo2" class="img">
+  </div>
+  <div class="elipse">
+    <img src="../../../assets/images/elipse3.png" alt="elipse-3" class="elipse-3">
+  </div>
+  <div class="elipse-4">
+    <img src="../../../assets/images/elipse4.png" alt="elipse-4" class="elipse-4">
+  </div>
 
-    <p class="text">Version 1.0</p>
-  </body>
-  
-
+  <div class="dark-mode-container">
+    <div class="dark-mode-switch">
+      <input type="radio" id="dark-mode-on" [checked]="darkMode" (click)="toggleDarkMode()">
+      <label for="dark-mode-on">Dark Mode</label>
+      <input type="radio" id="dark-mode-off" [checked]="!darkMode" (click)="toggleDarkMode()">
+      <label for="dark-mode-off">Light Mode</label>
+    </div>
+  </div>
+  <a class="text-help"  href="../../../assets/HelpSystem/Welcome.html">Help System</a>
+  <p class="text">Version 1.0</p>
+</body>

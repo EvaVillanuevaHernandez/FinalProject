@@ -28,26 +28,25 @@
       <li nz-submenu nzOpen nzTitle="Reports" nzIcon="form" style="font-size:15px;color:#1f4761">
         <ul>
           <li nz-menu-item nzMatchRouter>
-            <a>Prescriptions</a>
+            <a routerLink="/printP">Prescriptions</a>
           </li>
         </ul>
         <ul>
           <li nz-menu-item nzMatchRouter>
-            <a>Medical records</a>
+            <a routerLink="/medicalRecords">Medical record</a>
           </li>
         </ul>
-
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/chart">Drug Chart</a>
+          </li>
+        </ul>
       </li>
       <ul nz-submenu nzOpen nzTitle="Settings"  nzIcon="setting" style="font-size:15px;color:#1f4761">
 
         <ul>
           <li nz-menu-item nzMatchRouter>
-            <a routerLink="/settings">Options</a>
-          </li>
-        </ul>
-        <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/support">Support</a>
+            <a routerLink="/settings">Help</a>
           </li>
         </ul>
         <ul>

@@ -39,6 +39,9 @@ import { ProfileComponent } from './views/user/profile/profile.component';
 import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import {GoogleLoginProvider,FacebookLoginProvider} from '@abacritt/angularx-social-login';
 import { SocialLoginComponent } from './components/social-login/social-login.component';
+import { PrintPrescriptionComponent } from './views/print-prescription/print-prescription.component';
+import { MedicalRecordsComponent } from './views/medical-records/medical-records.component';
+import { DrugChartComponent } from './views/drug-chart/drug-chart.component';
 
 
 
@@ -67,6 +70,9 @@ registerLocaleData(en);
     SettingComponent,
     RegisterComponent,
     ProfileComponent,
+    PrintPrescriptionComponent,
+    MedicalRecordsComponent,
+    DrugChartComponent,
     
    
     

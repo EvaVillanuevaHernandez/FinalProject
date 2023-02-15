@@ -1,8 +1,9 @@
+<app-header></app-header>
+
 <div class="container">
-  <h2>Add User</h2>
   <form [formGroup]="userForm" (ngSubmit)="submit()">
 
-<input type="text" formControlName="email" [(ngModel)]="email" placeholder="User's Email">
+<input type="text" formControlName="email" [(ngModel)]="email" placeholder="Email">
 <div class="alert-danger" *ngIf="emailUser?.invalid && (emailUser?.dirty || emailUser?.touched)">
     <div class="container-error-message" *ngIf="emailUser?.errors?.['required']">
         User's Email required.
@@ -13,7 +14,7 @@
 </div>
 
 
-<input type="text" formControlName="username" [(ngModel)]="username" placeholder="User's name">
+<input type="text" formControlName="username" [(ngModel)]="username" placeholder="Username">
 <div class="alert-danger" *ngIf="usernameUser?.invalid && (usernameUser?.dirty || usernameUser?.touched)">
     <div class="container-error-message" *ngIf="usernameUser?.errors?.['required']">
         User's username required.
@@ -23,7 +24,7 @@
     </div>
 </div>
 
-<input type="text" formControlName="password" [(ngModel)]="password" placeholder="User's surname">
+<input type="text" formControlName="password" [(ngModel)]="password" placeholder="password ">
 <div class="alert-danger" *ngIf="passwordUser?.invalid && (passwordUser?.dirty || passwordUser?.touched)">
     <div class="container-error-message" *ngIf="passwordUser?.errors?.['required']">
         User's password is required.

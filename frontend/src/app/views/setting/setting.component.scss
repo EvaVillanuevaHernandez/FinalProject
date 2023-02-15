@@ -51,7 +51,14 @@
 .text {
   text-align: center;
   justify-content: end;
- margin-top: 0em;
+  margin-top: 0em;
+}
+
+.text-help {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  
 }
 
 .dark-mode {

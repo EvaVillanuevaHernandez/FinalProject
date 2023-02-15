@@ -17,6 +17,9 @@ import { RegisterComponent } from './views/user/register/register.component';
 
 import { AuthGuard } from './shared/guard/auth.guard';
 import { SocialLoginComponent } from './components/social-login/social-login.component';
+import { PrintPrescriptionComponent } from './views/print-prescription/print-prescription.component';
+import { MedicalRecordsComponent } from './views/medical-records/medical-records.component';
+import { DrugChartComponent } from './views/drug-chart/drug-chart.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -43,6 +46,9 @@ const routes: Routes = [
   {path : 'settings', component: SettingComponent},
   {path : 'register', component: RegisterComponent},
   {path : 'profile/:id', component: ProfileComponent},
+  {path : 'printP', component: PrintPrescriptionComponent},
+  {path : 'medicalRecords', component: MedicalRecordsComponent},
+  {path : 'chart', component: DrugChartComponent},
 ];
 
 @NgModule({
