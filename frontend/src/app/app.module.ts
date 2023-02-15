@@ -42,6 +42,7 @@ import { SocialLoginComponent } from './components/social-login/social-login.com
 import { PrintPrescriptionComponent } from './views/print-prescription/print-prescription.component';
 import { MedicalRecordsComponent } from './views/medical-records/medical-records.component';
 import { DrugChartComponent } from './views/drug-chart/drug-chart.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -73,6 +74,7 @@ registerLocaleData(en);
     PrintPrescriptionComponent,
     MedicalRecordsComponent,
     DrugChartComponent,
+    FooterComponent,
     
    
     

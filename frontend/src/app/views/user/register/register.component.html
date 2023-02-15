@@ -34,15 +34,6 @@
     </div>
 </div>
 
-<!-- <textarea formControlName="history" [(ngModel)]="history" placeholder="Patient's medical history" rows="5">
-</textarea>
-  <div class="alert-danger" *ngIf="historyPatient?.invalid && (historyPatient?.dirty || historyPatient?.touched)">
-      <div class="container-error-message" *ngIf="historyPatient?.errors?.['required']">
-          Patient's medical history required.
-      </div>
-      <div class="container-error-message" *ngIf="historyPatient?.errors?.['minlength']">
-          Patient's medical history must have more than 5 characters.
-      </div>
-  </div> -->
+<app-footer></app-footer>
 
 <button type="submit" class="btn-send" [disabled]="!userForm.valid">Send</button>
