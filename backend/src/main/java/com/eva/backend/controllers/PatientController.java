@@ -24,7 +24,6 @@ import com.eva.backend.entity.services.PatientServiceImpl;
 import javax.security.auth.message.callback.PrivateKeyCallback;
 
 @RestController
-
 @CrossOrigin(origins = "*")
 public class PatientController {
 

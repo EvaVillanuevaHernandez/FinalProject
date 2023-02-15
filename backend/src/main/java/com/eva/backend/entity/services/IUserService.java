@@ -1,7 +1,7 @@
 package com.eva.backend.entity.services;
 
 import java.util.List;
-
+/*import com.eva.backend.exceptions.UserNotFoundException;*/
 import com.eva.backend.entity.models.User;
 
 public interface IUserService {
@@ -11,4 +11,7 @@ public interface IUserService {
 	public User post(User user);
 	public void put(User user, int userId);
 	public void delete (int userId);
+
+	User getUserByUserName(String username);
+	/*User getUserByUserName(String username)  throws UserNotFoundException;*/
 }
