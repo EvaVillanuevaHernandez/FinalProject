@@ -44,6 +44,7 @@ import { MedicalRecordsComponent } from './views/medical-records/medical-records
 import { DrugChartComponent } from './views/drug-chart/drug-chart.component';
 import { FooterComponent } from './components/footer/footer.component';
 
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 
 registerLocaleData(en);
@@ -75,8 +76,7 @@ registerLocaleData(en);
     MedicalRecordsComponent,
     DrugChartComponent,
     FooterComponent,
-    
-   
+    SearchBarComponent,
     
   ],
   imports: [

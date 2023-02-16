@@ -12,16 +12,40 @@ import Swal from 'sweetalert2';
 })
 export class ListDoctorComponent {
   doctors: Array<Doctor> = [];
+  content: any;
+  newArray: any;
+  filteredDoctors: Doctor[] = [];
+  searchText = "";
 
-  constructor(private router: Router, private doctorService: DoctorService, private activatedRoute: ActivatedRoute,) {
-    this.getAllDoctors();
+  constructor(
+    private router: Router,
+    private doctorService: DoctorService,
+    private activatedRoute: ActivatedRoute
+  ) {
+    
   }
 
-  getAllDoctors() {
+  ngOnInit(): void {
     this.doctorService.getAllDoctors().subscribe((data) => {
       this.doctors = data;
       console.log(this.doctors);
+      this.search();
     });
+  }
+
+  searchKey(data: string) {
+    this.searchText = data;
+    this.search();
+  }
+
+  search() {
+    console.log('searchText:', this.searchText);
+    this.filteredDoctors =
+      this.searchText === ''
+        ? this.doctors
+        : this.doctors.filter((element) => {
+            return element.name.toLowerCase() == this.searchText.toLowerCase();
+          });
   }
 
   Add() {
@@ -49,5 +73,23 @@ export class ListDoctorComponent {
         });
       }
     });
+  }
+
+  searchThis(data: any) {
+    this.content = this.newArray;
+    console.log(data);
+    if (data) {
+      this.content = this.content.filter(function (
+        ele: { name: string },
+        i: any,
+        array: any
+      ) {
+        let arrayelement = ele.name.toLowerCase();
+        return arrayelement.includes(data);
+      });
+    } else {
+      console.log(this.content);
+    }
+    console.log(this.content);
   }
 }
