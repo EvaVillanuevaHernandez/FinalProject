@@ -98,10 +98,7 @@ Don't forget to start the frontend too!!
  _$ cd frontend/_
  ```
  ```
- _$ cd react-hooks-crud/_
- ```
- ```
-  _$ npm start_
+ _$ ng serve --open
  ```
 
 ---
@@ -218,13 +215,19 @@ https://documenter.getpostman.com/view/23478563/2s8YzZNeDX
 
 ###### Actions:
 
- - **A1** User actions will be accompanied by feedback andnotifications.
+ - **A1** User actions will be accompanied by feedback and notifications.
  - **A2** When entering data in the form, it is validated that the information is entered correctly, notifying the user if there is an error.
 
 ###### Validations:
 
 - **V1** When creating a prescription or patient users must enter the information correctly. 
 - **V2** If this information is wrong, the user will receive an alert.
+
+
+###### Reports:
+
+- **R1** The user has the possibility to print the prescriptions of the patients.To do this, you only have to enter the data.
+- **R2** You can also view history and a medication graph in the same way.
 
 ---
 ## Use cases.
@@ -285,7 +288,7 @@ Regarding usability elements, we have a clear and simple clean design, adapted t
 ---
 ## Tech stack
 
-* [React JS](https://es.reactjs.org/)
+* [Angular 15](https://angular.io/)
 * [Node v16.14.2](https://nodejs.org/en/)
 * [Spring Boot v2.5.7](https://spring.io/projects/spring-boot)
 * [Hibernate](https://hibernate.org/)
