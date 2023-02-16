@@ -76,7 +76,7 @@ export class AddPatientComponent {
         [Validators.required,
         Validators.minLength(5),
         Validators.maxLength(10),
-        // Validators.pattern('^[0-9,]*$')
+        Validators.pattern(/^\d{8}[a-zA-Z]$/)
       ]),
 
       history: new FormControl('',
@@ -154,7 +154,7 @@ export class AddPatientComponent {
           this.patientService.postPatient(patientData, this.dataImg);
           Swal.fire(
             'Done!',
-            'Your apartment has been created correctly.',
+            'Your patient has been add correctly.',
             'success'
           ).then(function () {
             window.location.href = 'listpatients';

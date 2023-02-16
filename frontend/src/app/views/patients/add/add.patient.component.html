@@ -10,6 +10,7 @@
             <div class="container-error-message" *ngIf="filePatient?.errors?.['required']">
                 Patient's image required.
             </div>
+            
         </div>
 
         <input type="text" formControlName="dni" [(ngModel)]="dni" placeholder="Patient's DNI">
@@ -17,8 +18,8 @@
             <div class="container-error-message" *ngIf="dniPatient?.errors?.['required']">
                 Patient's DNI required.
             </div>
-            <div class="container-error-message" *ngIf="dniPatient?.errors?.['minlength']">
-                Patient's DNI must have more than 5 characters.
+            <div class="container-error-message" *ngIf="dniPatient?.errors?.['pattern']">
+                Patient's DNI dont have a valid format
             </div>
         </div>
 
