@@ -285,7 +285,7 @@ Regarding usability elements, we have a clear and simple clean design, adapted t
 ---
 ## Tech stack
 
-* [React JS](https://es.reactjs.org/)
+* [Angular](https://angular.io/)
 * [Node v16.14.2](https://nodejs.org/en/)
 * [Spring Boot v2.5.7](https://spring.io/projects/spring-boot)
 * [Hibernate](https://hibernate.org/)
