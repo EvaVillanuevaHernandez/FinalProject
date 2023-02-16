@@ -3,11 +3,14 @@
     <h2>Add Prescription</h2>
     <form [formGroup]="prescriptionForm" (ngSubmit)="submit()">
 
-        <input type="text" formControlName="date" [(ngModel)]="date" placeholder="Prescription's DNI">
+        <input type="text" formControlName="date" [(ngModel)]="date" placeholder="yyyy-mm-dd">
         <div class="alert-danger"
             *ngIf="datePrescription?.invalid && (datePrescription?.dirty || datePrescription?.touched)">
             <div class="container-error-message" *ngIf="datePrescription?.errors?.['required']">
                 Prescription's Date required.
+            </div>
+            <div class="alert alert-danger" *ngIf="datePrescription?.errors?.['pattern']">
+                Prescription's Date must be in the format 'yyyy-mm-dd'.
             </div>
         </div>
 

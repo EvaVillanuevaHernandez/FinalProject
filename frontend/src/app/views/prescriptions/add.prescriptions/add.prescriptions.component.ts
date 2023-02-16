@@ -65,11 +65,12 @@ export class AddPrescriptionsComponent {
   }
 
   createForm() {
+  
+
     return new FormGroup({
       date: new FormControl('', [
         Validators.required,
-        // Validators.minLength(5),
-        // Validators.maxLength(10),
+        Validators.pattern(/^\d{4}-\d{2}-\d{2}$/)
       ]),
       medicine: new FormControl('', [
         Validators.required,
@@ -90,7 +91,7 @@ export class AddPrescriptionsComponent {
         Validators.required,
         // Validators.minLength(1),
         // Validators.maxLength(30),
-        // Validators.pattern('^[0-9]*$'),
+        // Validators.pattern('/^([0-9]{8}[A-Z])$/i'),
       ]),
     });
   }
@@ -127,7 +128,7 @@ export class AddPrescriptionsComponent {
           this.prescriptionService.postPrescription(prescriptionData);
           Swal.fire(
             'Done!',
-            'Your prescription has been created correctly.',
+            'Your prescription has been add correctly.',
             'success'
           ).then(function () {
             window.location.href = 'listprescriptions';

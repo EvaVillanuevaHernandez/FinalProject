@@ -41,7 +41,7 @@ export class ListPrescriptionsComponent {
         this.prescriptionService.deletePrescription(id);
         Swal.fire(
           'Done!',
-          'Your doctor has been deleted correctly.',
+          'Your prescription has been deleted correctly.',
           'success'
         ).then(function () {
           window.location.href = 'listprescriptions';
