@@ -291,51 +291,68 @@ Regarding usability elements, we have a clear and simple clean design, adapted t
 * [Hibernate](https://hibernate.org/)
 
 ---
-## Technology comparison
+## Comparison of technologies
 
-For a comparison of technologies I have chosen the most similar and used. Angular vs React for the frontend and Node vs Springboot for the backend:
+For the comparison of technologies I have chosen the most similar and used ones. Angular vs React for the frontend and Node vs Springboot for the backend:
 
 ###### Main differences between Angular and React:
 
-- Angular is a complete framework and React is a Javascript library that can be bundled with other libraries.
-- Angular's data flow is bidirectional, while React has a unidirectional data flow.
-- Angular updates the DOM (Document Object Model), while react uses a Virtual DOM.
-- Angular uses Typescript, a static language in terms of interfaces and classes (its advantage is that the code is more robust when it comes to identifying errors). React uses Javascript, with all the advantages and disadvantages that entails.
+Architecture: Angular is an MVC (Model-View-Controller) architecture framework, while React uses a component-based architecture. In Angular, the developer defines models, views and controllers, while React uses a reusable component-based framework.
+
+Learning curve: Angular has a steeper learning curve compared to React. Angular has a lot of concepts and terminology that developers need to learn, while React is easier to learn and use.
+
+Integration with other tools: Angular has a number of additional tools, such as Angular CLI, which helps developers create Angular projects and generate code faster. React does not have a similar built-in tool, but it can easily integrate with other JavaScript tools, such as Babel and Webpack.
 
 ###### Main differences between Node and SpringBoot:
 
-- Node.js, developed primarily in JavaScript, uses a single-threaded, event-driven, non-blocking I/O model. This makes it incredibly efficient and lightweight. Perfect for very data-intensive applications that need to operate in real time across distributed teams.
+- Node.js, developed primarily in Javascript, uses a single-threaded, event-driven, non-blocking I/O model. This makes it incredibly efficient and lightweight. It is perfect for data-intensive applications that need to run in real time on distributed teams.
 
-- Spring Boot allows a quick start of a productive application. The idea behind Spring Boot is that it's very easy to run, so it minimizes the amount of hassle that goes into getting an application up and running.
+- Spring Boot allows you to get a productive application up and running quickly. The idea behind Spring Boot is that it is very easy to run, so it minimizes the amount of hassle involved in getting an application up and running.
 
-Node Pros:
+Advantages of Node:
 
 ```
-- Javascript Community: Growing fast.
-- Light, fast
-- Single-threaded — low memory utilization
-- Great for I/O tasks
+- Javascript community: Grows quickly.
+- Lightweight, fast
+- Single-threaded - low memory usage
+- Excellent for I/O tasks
 - Npm is constantly growing.
 ```
-Spring Boot Pros:
+Advantages of Spring Boot:
 
 ```
-- Java Community: mature and thriving.
-- Java is typed (Check at compile time)
+- Java community: mature and thriving.
+- Java is typed (checked at compile time).
 - Long-term support and maintainability.
 - Support for multiple threads.
-- Easy to use many dependencies.
+- Ease of use of many dependencies.
 ```
 
 ###### Applying these differences in my project:
 
-**In the frontend**
+**On the frontend**.
 
-I think if I had used angular in my project, taking advantage of the fact that angular generates the basic structure of the project, I would have a project with a clearer structure. By oder way one of the advantages of having used React is that it is very flexible in terms of adaptability with other frameworks, libraries and tools has allowed me to use icon libraries among others.
+Now that I have done the same project in both React and Angular it seems to me that both are very useful. Both frameworks have strengths and weaknesses, and choosing the best framework will depend on the project and the specific requirements of your development team.
 
-**In the backend**
+Some of the advantages of React and Angular include:
 
-Regarding the backend, by using Spring Boot with a programming language already known to me such as Java, it was easier for me to adapt and learn to build a backend with this tool.
+Advantages of React:
+
+Ease of use and fast learning curve.
+Flexibility and modularity to integrate with other tools and libraries.
+Fast performance due to the use of the virtual DOM.
+Large amount of resources available due to its large active developer community.
+
+Advantages of Angular:
+
+Provides a clear and defined project structure.
+Includes many useful features and tools that can reduce development time.
+Uses TypeScript, which provides static typing and can help prevent bugs.
+
+**In the backend
+
+Regarding the backend, using Spring Boot with a programming language already known to me as Java, it was easier for me to adapt and learn to build a backend with this tool.
+
 
 ---
 ## Planning 📋
