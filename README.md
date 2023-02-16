@@ -1,4 +1,4 @@
-`<h1 align="center"> Medical Prescriptions</h1>
+<h1 align="center"> Medical Prescriptions</h1>
 
 ## Tabla de contenidos:
 ---
@@ -101,7 +101,7 @@ Don't forget to start the frontend too!!
  _$ cd react-hooks-crud/_
  ```
  ```
-  _$ npm start_
+  _$ ng serve --open
  ```
 
 ---
