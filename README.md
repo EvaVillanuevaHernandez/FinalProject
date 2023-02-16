@@ -294,51 +294,64 @@ Regarding usability elements, we have a clear and simple clean design, adapted t
 * [Hibernate](https://hibernate.org/)
 
 ---
-## Technology comparison
+## Comparison of technologies
 
-For a comparison of technologies I have chosen the most similar and used. Angular vs React for the frontend and Node vs Springboot for the backend:
+For the comparison of technologies I have chosen the most similar and used ones. Angular vs React for the frontend and Node vs Springboot for the backend:
 
 ###### Main differences between Angular and React:
 
-- Angular is a complete framework and React is a Javascript library that can be bundled with other libraries.
-- Angular's data flow is bidirectional, while React has a unidirectional data flow.
-- Angular updates the DOM (Document Object Model), while react uses a Virtual DOM.
-- Angular uses Typescript, a static language in terms of interfaces and classes (its advantage is that the code is more robust when it comes to identifying errors). React uses Javascript, with all the advantages and disadvantages that entails.
+Architecture: Angular is an MVC (Model-View-Controller) architecture framework, while React uses a component-based architecture. In Angular, the developer defines models, views and controllers, while React uses a reusable component-based framework.
+
+Learning curve: Angular has a steeper learning curve compared to React. Angular has a lot of concepts and terminology that developers need to learn, while React is easier to learn and use.
+
+Integration with other tools: Angular has a number of additional tools, such as Angular CLI, which helps developers create Angular projects and generate code faster. React does not have a similar built-in tool, but it can easily integrate with other JavaScript tools, such as Babel and Webpack.
 
 ###### Main differences between Node and SpringBoot:
 
-- Node.js, developed primarily in JavaScript, uses a single-threaded, event-driven, non-blocking I/O model. This makes it incredibly efficient and lightweight. Perfect for very data-intensive applications that need to operate in real time across distributed teams.
+- Node.js, developed primarily in Javascript, uses a single-threaded, event-driven, non-blocking I/O model. This makes it incredibly efficient and lightweight. It is perfect for data-intensive applications that need to run in real time on distributed teams.
 
-- Spring Boot allows a quick start of a productive application. The idea behind Spring Boot is that it's very easy to run, so it minimizes the amount of hassle that goes into getting an application up and running.
+- Spring Boot allows you to get a productive application up and running quickly. The idea behind Spring Boot is that it is very easy to run, so it minimizes the amount of hassle involved in getting an application up and running.
 
-Node Pros:
+Advantages of Node:
 
 ```
-- Javascript Community: Growing fast.
-- Light, fast
-- Single-threaded — low memory utilization
-- Great for I/O tasks
+- Javascript community: Grows quickly.
+- Lightweight, fast
+- Single-threaded - low memory usage
+- Excellent for I/O tasks
 - Npm is constantly growing.
 ```
-Spring Boot Pros:
+Advantages of Spring Boot:
 
 ```
-- Java Community: mature and thriving.
-- Java is typed (Check at compile time)
+- Java community: mature and thriving.
+- Java is typed (checked at compile time).
 - Long-term support and maintainability.
 - Support for multiple threads.
-- Easy to use many dependencies.
+- Ease of use of many dependencies.
 ```
 
-###### Applying these differences in my project:
+###### Native, hybrid web and PWD applications:
 
-**In the frontend**
+**On the frontend**.
 
-I think if I had used angular in my project, taking advantage of the fact that angular generates the basic structure of the project, I would have a project with a clearer structure. By oder way one of the advantages of having used React is that it is very flexible in terms of adaptability with other frameworks, libraries and tools has allowed me to use icon libraries among others.
+Both Angular and React can be used to develop hybrid mobile apps, web apps and PWA (Progressive Web Apps).
 
-**In the backend**
+As for hybrid mobile apps, both frameworks allow you to create apps using tools like Cordova or Capacitor. However, there are some differences in how they integrate with these tools. In the case of Angular, Ionic is used as the framework for creating hybrid mobile apps, while in React, different tools such as React Native or NativeScript can be used. 
 
-Regarding the backend, by using Spring Boot with a programming language already known to me such as Java, it was easier for me to adapt and learn to build a backend with this tool.
+As for web applications, in my case, both Angular and React are a good choice. Angular provides a clear and defined project structure and many useful tools for web application development. React, on the other hand, offers flexibility and ease of use, which can be useful in small to medium-sized projects.
+
+Finally, in terms of PWA, React is a good choice as it is designed to be used in progressive web apps. However, Angular is also a good option, as it offers tools for creating high-quality PWAs.
+
+In summary, both Angular and React are viable options for developing hybrid native apps, web apps and PWAs. The choice of the best framework will depend on the specific project and the requirements of the development team. 
+
+**In the backend
+
+Regarding the backend, using Spring Boot with a programming language already known to me as Java, it was easier for me to adapt and learn to build a backend with this tool.
+
+---
+
+Translated with www.DeepL.com/Translator (free version)
 
 ---
 ## Planning 📋
