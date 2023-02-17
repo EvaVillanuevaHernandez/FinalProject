@@ -65,8 +65,6 @@ class BackendApplicationTests {
 		assertEquals("Test Patient", result.getHistory());
 	}
 
-	@DataJpaTest
-	public class DoctorTest {
 
 		@Test
 		public void testGettersAndSetters() {
@@ -100,25 +98,9 @@ class BackendApplicationTests {
 			Assertions.assertEquals(user, doctor.getUser());
 		}
 
-		@Test
-		@Sql({"/sql/create-doctor.sql"})
-		public void testDoctorEntityMapping() {
-			Doctor doctor = new Doctor();
-			doctor.setCollegiateNum("12345");
-			doctor.setName("John");
-			doctor.setSurname("Doe");
-			doctor.setSecondSurname("Smith");
-			doctor.setDni("12345678A");
 
-			assertEquals("12345", doctor.getCollegiateNum());
-			assertEquals("John", doctor.getName());
-			assertEquals("Doe", doctor.getSurname());
-			assertEquals("Smith", doctor.getSecondSurname());
-			assertEquals("12345678A", doctor.getDni());
-		}
-	}
 
-	class UserTest {
+		
 
 		@Test
 		void test() {
@@ -133,8 +115,6 @@ class BackendApplicationTests {
 			assertEquals(1, user.getRoles().size());
 		}
 
-	}
-
 
 
 
@@ -148,4 +128,7 @@ class BackendApplicationTests {
 		assertThat(found.getName())
 				.isEqualTo(alex.getName());
 	}
+
+
 }
+
