@@ -16,7 +16,7 @@ export class PrintPrescriptionComponent {
   }
 
   downloadPrescription() {
-    const endpoint = 'http://localhost:8080/patients/printPrescription';
+    const endpoint = 'https://localhost:8443/patients/printPrescription';
     this.reportsService.getPrescriptionPDF(this.dniP,endpoint)
       .subscribe(response => {
         const file = new Blob([response], { type: 'application/pdf' });

@@ -7,7 +7,7 @@ import { Prescriptions } from '../models/prescriptions';
 })
 export class PrescriptionsService {
 
-  endpoint: string = "http://" + window.location.hostname + ":8080/prescriptions";
+  endpoint: string = "https://" + window.location.hostname + ":8443/prescriptions";
 
   constructor(private http: HttpClient) { }
 
