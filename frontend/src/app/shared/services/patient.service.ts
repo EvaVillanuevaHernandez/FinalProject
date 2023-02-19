@@ -7,7 +7,7 @@ import { Patient } from '../models/patients';
 })
 export class PatientService {
 
-  endpoint: string = "http://" + window.location.hostname + ":8080/patients";
+  endpoint: string = "https://" + window.location.hostname + ":8443/patients";
 
   constructor(private http: HttpClient) { }
 

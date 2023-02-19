@@ -13,7 +13,7 @@ export class DrugChartComponent {
   }
 
   downloadChartRecord() {
-    const endpoint = 'http://localhost:8080/patients/exportPrescription';
+    const endpoint = 'https://localhost:8443/patients/exportPrescription';
     this.reportsService.getDrugChart(endpoint)
       .subscribe(response => {
         const file = new Blob([response], { type: 'application/pdf' });

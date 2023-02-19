@@ -17,7 +17,7 @@ export class MedicalRecordsComponent {
   }
 
   downloadMedicalRecord() {
-    const endpoint = 'http://localhost:8080/patients/exportReport';
+    const endpoint = 'https://localhost:8443/patients/exportReport';
     this.reportsService.getMedicalRecords(this.idP, this.history, endpoint)
       .subscribe(response => {
         const file = new Blob([response], { type: 'application/pdf' });

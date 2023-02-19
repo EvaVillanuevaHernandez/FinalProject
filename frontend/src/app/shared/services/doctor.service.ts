@@ -6,7 +6,7 @@ import { Doctor } from '../models/doctors';
   providedIn: 'root'
 })
 export class DoctorService {
-  endpoint: string = "http://" + window.location.hostname + ":8080/doctors";
+  endpoint: string = "https://" + window.location.hostname + ":8443/doctors";
 
   constructor(private http: HttpClient) { }
 

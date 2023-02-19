@@ -7,7 +7,7 @@ import { User } from '../models/user';
 })
 export class UserService {
 
-  endpoint: string = "http://" + window.location.hostname + ":8080/users"
+  endpoint: string = "https://" + window.location.hostname + ":8443/users"
 
   constructor(private http: HttpClient) { }
 
