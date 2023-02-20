@@ -45,6 +45,8 @@ import { DrugChartComponent } from './views/drug-chart/drug-chart.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { VideoComponent } from './components/video/video.component';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 
 
 registerLocaleData(en);
@@ -77,6 +79,7 @@ registerLocaleData(en);
     DrugChartComponent,
     FooterComponent,
     SearchBarComponent,
+    VideoComponent,
     
   ],
   imports: [
@@ -89,7 +92,7 @@ registerLocaleData(en);
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-
+    YouTubePlayerModule,
    
     
     
