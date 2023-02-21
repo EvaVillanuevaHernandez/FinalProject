@@ -112,13 +112,23 @@ const dbConfig: DBConfig  = {
     HttpClientModule,
     YouTubePlayerModule,
    
+    NgxIndexedDBModule.forRoot(dbConfig),
+
+ 
+   
     
     
     NgxPermissionsModule.forRoot(),
          BrowserAnimationsModule,
          IconsProviderModule,
          NzLayoutModule,
-         NzMenuModule
+         NzMenuModule,
+         ServiceWorkerModule.register('ngsw-worker.js', {
+           enabled: !isDevMode(),
+           // Register the ServiceWorker as soon as the application is stable
+           // or after 30 seconds (whichever comes first).
+           registrationStrategy: 'registerWhenStable:30000'
+         })
   ],
   providers: [authInterceptorProviders, {
      provide: NZ_I18N,
