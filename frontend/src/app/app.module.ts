@@ -47,7 +47,7 @@ import { NgxIndexedDBModule, DBConfig } from 'ngx-indexed-db';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { VideoComponent } from './components/video/video.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
-
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 registerLocaleData(en);
 
