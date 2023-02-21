@@ -43,7 +43,7 @@ import { PrintPrescriptionComponent } from './views/print-prescription/print-pre
 import { MedicalRecordsComponent } from './views/medical-records/medical-records.component';
 import { DrugChartComponent } from './views/drug-chart/drug-chart.component';
 import { FooterComponent } from './components/footer/footer.component';
-
+import { NgxIndexedDBModule, NgxIndexedDBService } from 'ngx-indexed-db';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { VideoComponent } from './components/video/video.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
