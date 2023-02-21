@@ -24,7 +24,7 @@ export class PatientService {
   getAllPatients() {
     // if (this.onlineOfflineService.isOnline) {
       this.http.get<Array<Patient>>(this.endpoint).subscribe((patients) => {
-        this.dbService.bulkPut('patients', patients).subscribe((a) => { console.log(a) })
+        this.dbService.bulkPut('patient', patients).subscribe((a) => { console.log(a) })
       });
       return this.http.get<Array<Patient>>(this.endpoint);
     // } else {
