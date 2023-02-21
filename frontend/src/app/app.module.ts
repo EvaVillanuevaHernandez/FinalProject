@@ -51,6 +51,23 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
 
 registerLocaleData(en);
 
+const dbConfig: DBConfig  = {
+  name: 'prescriptions',
+  version: 1,
+  objectStoresMeta: [{
+    store: 'patient',
+    storeConfig: { keyPath: 'id', autoIncrement: true },//quiza no hace falta
+    storeSchema: [
+      { name: 'name', keypath: 'name', options: { unique: false } },
+      { name: 'surname', keypath: 'surname', options: { unique: false } },
+      { name: 'history', keypath: 'history', options: { unique: false } },
+      { name: 'secondSurname', keypath: 'secondSurname', options: { unique: false } },
+      { name: 'image', keypath: 'image', options: { unique: false } },
+      { name: 'doctor', keypath: 'doctor', options: { unique: false } },
+      { name: 'typeImg', keypath: 'typeImg', options: { unique: false } },
+    ]
+  }]
+};
 @NgModule({
 
   declarations: [
