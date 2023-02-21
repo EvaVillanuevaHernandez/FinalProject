@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Patient } from '../models/patients';
 import { OnlineOfflineService } from './offline-online.service';
-import { NgxIndexedDBService } from 'ngx-indexed-db';
+// import { NgxIndexedDBService } from 'ngx-indexed-db';
 import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
@@ -13,24 +13,24 @@ export class PatientService {
 
   constructor(private http: HttpClient,
     private onlineOfflineService: OnlineOfflineService,
-    private dbService: NgxIndexedDBService
+    // private dbService: NgxIndexedDBService
 
   ) { }
 
-  // getAllPatients() {
-  //   return this.http.get<Array<Patient>>(this.endpoint);
-  // }
-
   getAllPatients() {
-    // if (this.onlineOfflineService.isOnline) {
-      this.http.get<Array<Patient>>(this.endpoint).subscribe((patients) => {
-        this.dbService.bulkPut('patient', patients).subscribe((a) => { console.log(a) })
-      });
-      return this.http.get<Array<Patient>>(this.endpoint);
-    // } else {
-    //   return this.dbService.getAll<Patient[]>('patient');
-    // }
+    return this.http.get<Array<Patient>>(this.endpoint);
   }
+
+  // getAllPatients() {
+  //   // if (this.onlineOfflineService.isOnline) {
+  //     this.http.get<Array<Patient>>(this.endpoint).subscribe((patients) => {
+  //       this.dbService.bulkPut('patient', patients).subscribe((a) => { console.log(a) })
+  //     });
+  //     return this.http.get<Array<Patient>>(this.endpoint);
+  //   // } else {
+  //   //   return this.dbService.getAll<Patient[]>('patient');
+  //   // }
+  // }
 
   getPatient(id: number) {
     return this.http.get<Patient>(this.endpoint + "/" + id);

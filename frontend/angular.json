@@ -95,6 +95,7 @@
               "src/favicon.ico",
               "src/assets"
             ],
+            "codeCoverage": true,
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
