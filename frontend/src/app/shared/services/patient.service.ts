@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Patient } from '../models/patients';
-
+import { OnlineOfflineService } from './offline-online.service';
+import { NgxIndexedDBService } from 'ngx-indexed-db';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,10 +11,25 @@ export class PatientService {
 
   endpoint: string = "https://" + window.location.hostname + ":8443/patients";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private onlineOfflineService: OnlineOfflineService,
+    private dbService: NgxIndexedDBService
+
+  ) { }
+
+  // getAllPatients() {
+  //   return this.http.get<Array<Patient>>(this.endpoint);
+  // }
 
   getAllPatients() {
-    return this.http.get<Array<Patient>>(this.endpoint);
+    // if (this.onlineOfflineService.isOnline) {
+      this.http.get<Array<Patient>>(this.endpoint).subscribe((patients) => {
+        this.dbService.bulkPut('patients', patients).subscribe((a) => { console.log(a) })
+      });
+      return this.http.get<Array<Patient>>(this.endpoint);
+    // } else {
+    //   return this.dbService.getAll<Patient[]>('patient');
+    // }
   }
 
   getPatient(id: number) {
