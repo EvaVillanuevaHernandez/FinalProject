@@ -1,4 +1,9 @@
+// import { HttpClientModule } from '@angular/common/http';
 // import { ComponentFixture, TestBed } from '@angular/core/testing';
+// import { ReactiveFormsModule } from '@angular/forms';
+// import { AppRoutingModule } from 'src/app/app-routing.module';
+// import { HeaderComponent } from 'src/app/components/header/header.component';
+// import { SliderComponent } from 'src/app/components/slider/slider.component';
 
 // import { HomeComponent } from './home.component';
 
@@ -8,7 +13,8 @@
 
 //   beforeEach(async () => {
 //     await TestBed.configureTestingModule({
-//       declarations: [ HomeComponent ]
+//       imports: [ReactiveFormsModule, HttpClientModule, AppRoutingModule],
+//       declarations: [ HomeComponent, HeaderComponent, SliderComponent ]
 //     })
 //     .compileComponents();
 

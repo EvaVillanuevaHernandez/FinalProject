@@ -11,7 +11,7 @@ describe('HeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule, HttpClientModule, AppRoutingModule, MatSlideToggleModule,],
+      imports: [ReactiveFormsModule, HttpClientModule, AppRoutingModule],
       declarations: [ HeaderComponent ]
     })
     .compileComponents();
