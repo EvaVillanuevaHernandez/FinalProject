@@ -1,4 +1,7 @@
+// import { HttpClientModule } from '@angular/common/http';
+// import { NO_ERRORS_SCHEMA } from '@angular/core';
 // import { ComponentFixture, TestBed } from '@angular/core/testing';
+// import { AppRoutingModule } from 'src/app/app-routing.module';
 
 // import { SettingComponent } from './setting.component';
 
@@ -8,6 +11,11 @@
 
 //   beforeEach(async () => {
 //     await TestBed.configureTestingModule({
+//       imports: [
+//         HttpClientModule,
+//         AppRoutingModule,
+//       ],
+//       schemas: [NO_ERRORS_SCHEMA],
 //       declarations: [ SettingComponent ]
 //     })
 //     .compileComponents();

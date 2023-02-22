@@ -4,10 +4,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { NgxPermissionsModule } from 'ngx-permissions';
 import { NavComponent } from './nav.component';
 import { NzHeaderComponent, NzLayoutComponent, NzSiderComponent } from 'ng-zorro-antd/layout';
-import { NzModalModule } from 'ng-zorro-antd/modal';
 
 describe('NavComponent', () => {
   let component: NavComponent;
@@ -20,7 +18,6 @@ describe('NavComponent', () => {
         HttpClientModule,
         AppRoutingModule,
         MatSlideToggleModule,
-        NgxPermissionsModule.forRoot(),
       ],
       schemas: [NO_ERRORS_SCHEMA],
       declarations: [NavComponent, NzLayoutComponent, NzSiderComponent, NzHeaderComponent],

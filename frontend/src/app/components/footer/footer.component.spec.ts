@@ -3,7 +3,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { NgxPermissionsModule } from 'ngx-permissions';
 import { FooterComponent } from './footer.component';
 import { NzFooterComponent } from 'ng-zorro-antd/layout';
 
@@ -18,7 +17,7 @@ describe('FooterComponent', () => {
         HttpClientModule,
         AppRoutingModule,
         MatSlideToggleModule,
-        NgxPermissionsModule.forRoot(),
+
       ],
       declarations: [FooterComponent, NzFooterComponent],
     }).compileComponents();

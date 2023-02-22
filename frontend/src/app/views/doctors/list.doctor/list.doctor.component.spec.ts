@@ -1,8 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { NzLayoutComponent, NzSiderComponent } from 'ng-zorro-antd/layout';
-import { NgxPermissionsModule } from 'ngx-permissions';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { NavComponent } from 'src/app/components/nav/nav.component';
 
@@ -17,14 +15,11 @@ describe('ListDoctorComponent', () => {
       imports: [
         HttpClientModule,
         AppRoutingModule,
-        NgxPermissionsModule.forRoot(),
       ],
       schemas: [NO_ERRORS_SCHEMA],
       declarations: [
         ListDoctorComponent,
         NavComponent,
-        NzLayoutComponent,
-        NzSiderComponent,
       ],
     }).compileComponents();
 

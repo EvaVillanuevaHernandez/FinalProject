@@ -3,7 +3,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { NgxPermissionsModule } from 'ngx-permissions';
 import { VideoComponent } from './video.component';
 import { YouTubePlayer } from '@angular/youtube-player';
 
@@ -18,7 +17,6 @@ describe('VideoComponent', () => {
         HttpClientModule,
         AppRoutingModule,
         MatSlideToggleModule,
-        NgxPermissionsModule.forRoot(),
       ],
       declarations: [VideoComponent, YouTubePlayer],
     }).compileComponents();

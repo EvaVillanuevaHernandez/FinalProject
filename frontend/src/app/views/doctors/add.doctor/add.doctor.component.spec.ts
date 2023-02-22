@@ -1,10 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
-import { NgxPermissionsModule } from 'ngx-permissions';
 import { NavComponent } from 'src/app/components/nav/nav.component';
 import { AddDoctorComponent } from './add.doctor.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
-import { NzLayoutComponent, NzSiderComponent } from 'ng-zorro-antd/layout';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('AddDoctorComponent', () => {
@@ -16,14 +14,11 @@ describe('AddDoctorComponent', () => {
       imports: [
         HttpClientModule,
         AppRoutingModule,
-        NgxPermissionsModule.forRoot(),
       ],
       schemas: [NO_ERRORS_SCHEMA],
       declarations: [
         AddDoctorComponent,
         NavComponent,
-        NzLayoutComponent,
-        NzSiderComponent,
       ],
     }).compileComponents();
 
