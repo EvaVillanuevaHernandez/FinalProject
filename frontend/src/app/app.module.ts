@@ -25,7 +25,7 @@ import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from './icons-provider.module';
-import { NzFooterComponent, NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzLayoutModule, NzSiderComponent } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NavComponent } from './components/nav/nav.component';
 import { NzTableModule } from 'ng-zorro-antd/table';
@@ -54,6 +54,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { VideoComponent } from './components/video/video.component';
 import { YouTubePlayer, YouTubePlayerModule } from '@angular/youtube-player';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 
 registerLocaleData(en);
 
@@ -125,9 +126,8 @@ const dbConfig: DBConfig = {
     IconsProviderModule,
     NzLayoutModule,
     NzMenuModule,
-    NzLayoutModule, 
-    FormsModule,
     YouTubePlayerModule,
+    NzModalModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable

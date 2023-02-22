@@ -15,13 +15,12 @@ describe('VideoComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         ReactiveFormsModule,
-        YouTubePlayer,
         HttpClientModule,
         AppRoutingModule,
         MatSlideToggleModule,
         NgxPermissionsModule.forRoot(),
       ],
-      declarations: [VideoComponent],
+      declarations: [VideoComponent, YouTubePlayer],
     }).compileComponents();
 
     fixture = TestBed.createComponent(VideoComponent);

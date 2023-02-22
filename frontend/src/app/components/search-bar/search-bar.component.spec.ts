@@ -13,12 +13,12 @@ describe('SearchBarComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        ReactiveFormsModule,
-        HttpClientModule,
-        AppRoutingModule,
-        MatSlideToggleModule,
+        // ReactiveFormsModule,
+        // HttpClientModule,
+        // AppRoutingModule,
+        // MatSlideToggleModule,
         FormsModule,
-        NgxPermissionsModule.forRoot(),
+        // NgxPermissionsModule.forRoot(),
       ],
       declarations: [SearchBarComponent],
     }).compileComponents();
