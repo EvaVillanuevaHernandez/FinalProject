@@ -59,7 +59,7 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
 registerLocaleData(en);
 
 const dbConfig: DBConfig = {
-  name: 'prescriptions',
+  name: 'localdb',
   version: 1,
   objectStoresMeta: [
     {
@@ -79,7 +79,21 @@ const dbConfig: DBConfig = {
         { name: 'typeImg', keypath: 'typeImg', options: { unique: false } },
       ],
     },
+
+    {
+      store: 'doctor',
+      storeConfig: { keyPath: 'id', autoIncrement: true }, //quiza no hace falta
+      storeSchema: [
+        { name: 'name', keypath: 'name', options: { unique: false } },
+        { name: 'surname', keypath: 'surname', options: { unique: false } },
+        {name: 'secondSurname',keypath: 'secondSurname',options: { unique: false },},
+        { name: 'dni', keypath: 'dni', options: { unique: false } },
+        { name: 'collegiateNum', keypath: 'collegiateNum', options: { unique: false } },
+        
+      ],
+    }
   ],
+
 };
 @NgModule({
   declarations: [
@@ -161,4 +175,4 @@ const dbConfig: DBConfig = {
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
