@@ -359,16 +359,16 @@ For this project we have used GitHub's projects tool, which allows you to organi
 ---
 ## Conclusion :bulb:
 
-In this project, I have learned to use different tools and technologies that have allowed me to create an attractive and functional web application. In addition, I have been able to apply my design knowledge to create a user-friendly and pleasant user experience. Through this project, I have also discovered my passion for frontend programming and realized that it is something that I would like to continue exploring and developing in the future. In short, this project has been a great opportunity to learn and discover my interests and skills in the world of technology and web design.
+After working as a team on this project, we learned the importance of collaboration and communication to achieve our common goals. We used current technologies such as Angular, TypeScript, IndexDB and other web development tools to build a functional and scalable application. In addition, we have learned how to handle bugs and find creative solutions to solve technical problems. Overall, it has been a valuable and enriching experience that has allowed us to improve our technical and social skills.
 
 ---
 ## Links 📖
 
 - https://www.w3schools.com/
-- https://reactstrap.github.io/?path=/story/home-installation--page
+- https://material.angular.io/components/icon/overview
 - https://spring.io/projects/spring-boot
-- https://reactstrap.github.io/?path=/story/home-installation--page
-- https://reactjs.org/docs/getting-started.html
+- https://docs.angular.lat/tutorial/toh-pt0
+- [https://reactjs.org/docs/getting-started.html](https://ng.ant.design/docs/introduce/en)
 
 ## Author :woman_technologist:
 
