@@ -353,19 +353,7 @@ Regarding the backend, using Spring Boot with a programming language already kno
 ---
 ## Planning 📋
 
-To plan this project I have used the trello tool, here I leave the links of each subject:
-
-PGV:
-https://trello.com/invite/b/xTtoTD4D/ATTI7b50b2cc95127f6e1c2aff30457ba617EB846ECD/pgv
-
-AED:
-https://trello.com/invite/b/ouaTYfaw/ATTI05842126d90eea228ce0a244e44e9cce7544A597/aed
-
-PGL:
-https://trello.com/invite/b/RPDepCZv/ATTI611aa29bdfbf257aff7ca453c40928841DD86B8C/pgl
-
-DAD:
-https://trello.com/invite/b/YqbhDTRE/ATTI157b2bfcec83a90083421e76af8a8069B34DF0FF/dad
+For this project we have used GitHub's projects tool, which allows you to organise and distribute tasks.
 
 
 ---
