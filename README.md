@@ -98,7 +98,7 @@ Don't forget to start the frontend too!!
  _$ cd frontend/_
  ```
  ```
- _$ ng serve --open
+ _$ npm start
  ```
 
 ---
