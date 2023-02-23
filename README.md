@@ -289,7 +289,6 @@ Regarding usability elements, we have a clear and simple clean design, adapted t
  
  - Well-defined form fields and fonts that favor the perfect legibility of the texts.
  
-  Contrast between text and background is adequate so that users with low vision can read the information without difficulty.
  - Design adaptable to all kinds of devices.
 
 ---
