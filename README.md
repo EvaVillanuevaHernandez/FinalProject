@@ -256,9 +256,13 @@ Regarding usability elements, we have a clear and simple clean design, adapted t
 
  ![image](https://user-images.githubusercontent.com/95490721/206919497-a95362e0-3cf4-4acf-a469-a624acac2428.png)
 
-![image](https://user-images.githubusercontent.com/95490721/206919999-6e7ff21b-3312-4766-83c4-27e6abe0409d.png)
+ ![image](https://user-images.githubusercontent.com/95490721/206919999-6e7ff21b-3312-4766-83c4-27e6abe0409d.png)
  
  - Easy to understand, the user does not need more than three clicks to reach his goal with minimal effort. In addition, essential information is visible and clear.
+ 
+ - Has clear icons and labels so that users can quickly identify the different sections and actions.
+ 
+ - It integrates a predictive search system that displays results as you type search terms, making it easier to navigate and locate information.
  
  - Elegant in its design, it favors the user's perception, the soft colors of its interface and the homogeneity make the end user feel attracted to the product.
  
@@ -281,8 +285,11 @@ Regarding usability elements, we have a clear and simple clean design, adapted t
  
  - Contrast between the background and the color of the font to favor reading and favor visual health, also pure white is not used to avoid glare and visual fatigue.
  
+ - Compatible with assistive technologies, such as screen readers and alternative keyboards, so that users with disabilities can use it without any problems.
+ 
  - Well-defined form fields and fonts that favor the perfect legibility of the texts.
  
+  Contrast between text and background is adequate so that users with low vision can read the information without difficulty.
  - Design adaptable to all kinds of devices.
 
 ---
