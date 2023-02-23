@@ -1,4 +1,8 @@
+import { HttpClientModule } from '@angular/common/http';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+import { NavComponent } from 'src/app/components/nav/nav.component';
 
 import { PatientsComponent } from './patients.component';
 
@@ -8,7 +12,12 @@ describe('PatientsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PatientsComponent ]
+      imports: [
+        HttpClientModule,
+        AppRoutingModule,
+      ],
+      schemas: [NO_ERRORS_SCHEMA],
+      declarations: [ PatientsComponent, NavComponent ]
     })
     .compileComponents();
 

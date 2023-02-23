@@ -1,0 +1,17 @@
+<app-nav></app-nav>
+<div class="container">
+    <h4>Enter the data to see medical reports</h4>
+<div class="form-group">
+    <label for="idP">Patient's ID:</label>
+    <input type="text" id="idP" name="idP" [(ngModel)]="idP" class="form-control">
+
+    <label for="history">Patient's history:</label>
+    <input type="text" id="history" name="history" [(ngModel)]="history" class="form-control">
+  </div>
+  
+  <div class="form-group">
+    <button class="btn-send" (click)="downloadMedicalRecord()">Donwload</button>
+  </div>
+  
+</div>
+<app-footer></app-footer>

@@ -15,7 +15,7 @@ const httpOptions = {
 })
 export class AuthService {
 
-  endpoint: string = "http://" + window.location.hostname + ":8080/api/auth/"
+  endpoint: string = "https://" + window.location.hostname + ":8443/api/auth/"
 
   constructor(private permissionsService: NgxPermissionsService, private http: HttpClient) { }
 

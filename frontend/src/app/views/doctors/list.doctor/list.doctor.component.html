@@ -1,0 +1,47 @@
+<app-nav></app-nav>
+<div class="container-e">
+    <div class="card">
+        <div class="card-header">
+            <h3>Doctors</h3>
+            <button (click)="Add()" class="Add">Add doctors</button>
+            <input type="text" id="search" [ngModel]="searchText" (ngModelChange)="searchKey($event)" placeholder="Find by name"
+            ngModel>
+            <div class="row" *ngFor="let e of filteredDoctors">
+        </div>
+        <div class="card-body">
+            <table class="table table-striped" id="table" name="table" width="900" cellspacing="3" cellpadding="3"
+                style="font-size: 15pt">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Second Surname</th>
+                        <th>Dni</th>
+                        <th>collegiateNum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let e of filteredDoctors" class="text-center">
+                        <td>{{e.name}}</td>
+                        <td>{{e.surname}}</td>
+                        <td>{{e.secondSurname}}</td>
+                        <td>{{e.dni}}</td>
+                        <td>{{e.collegiateNum}}</td>
+                        <td>
+                            <button class="edit">
+                                <img src="../../../../assets/images/editing.png" alt="edit" class="edit"
+                                    routerLink="/edit-doctor/{{e.id}}" />
+                            </button>
+
+                            <button class="delete" (click)="delete(e.id)">
+                                <img src="../../../../assets/images/delete.png" alt="delete" class="delete" />
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- 
+<router-outlet></router-outlet> -->

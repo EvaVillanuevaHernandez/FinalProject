@@ -2,4 +2,15 @@
 // @import "~ng-zorro-antd/style/index.min.css"; /* Import base styles */
 // @import "~ng-zorro-antd/button/style/index.min.css";
 
-html { background-color: aliceblue; }
+
+body{
+    max-width: 100vw;
+    background: #eaebea;
+    overflow: hidden;
+    // [data-theme='dark'] {
+    //     --background: #7C99AC;
+        
+    // }
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

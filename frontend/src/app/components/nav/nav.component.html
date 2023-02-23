@@ -1,0 +1,78 @@
+<nz-layout class="app-layout" >
+  <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed"
+    [nzTrigger]="null">
+    <div class="sidebar-logo">
+      <a>
+        <img src="../assets/images/logo2.png" alt="logo2">
+        <h1>Medical prescriptions</h1>
+      </a>
+    </div>
+   
+    <ul nz-menu class="menu-sidebar" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-submenu nzOpen nzTitle="Utils" nzIcon="plus" style="font-size:15px;color:#1f4761">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/listpatients">Patients</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/listprescriptions">Prescriptions</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a  routerLink="/profile/{{dataUser.id}}">Profile</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/listdoctors">Doctors</a>
+          </li>
+        </ul>
+      </li>
+      <li nz-submenu nzOpen nzTitle="Reports" nzIcon="form" style="font-size:15px;color:#1f4761">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/printP">Prescriptions</a>
+          </li>
+        </ul>
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/medicalRecords">Medical record</a>
+          </li>
+        </ul>
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/chart">Drug Chart</a>
+          </li>
+        </ul>
+      </li>
+      <ul nz-submenu nzOpen nzTitle="Settings"  nzIcon="setting" style="font-size:15px;color:#1f4761">
+
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/settings">Help</a>
+          </li>
+        </ul>
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a a routerLink="/register">New user</a>
+          </li>
+        </ul>
+      </ul>
+    </ul>
+  </nz-sider>
+
+  <nz-header>
+    <div class="app-header"> 
+     <div class="imglogo" >
+      <a>
+        <img src="../assets/images/logo1.png" alt="logo-1">
+        <h4 class="logo-txt" >Artemisa medical center</h4>
+      </a>
+     </div>
+      <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+        <span class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></span>
+      </span>
+      
+    </div>
+  </nz-header>
+
+  <router-outlet></router-outlet>
+
+</nz-layout>

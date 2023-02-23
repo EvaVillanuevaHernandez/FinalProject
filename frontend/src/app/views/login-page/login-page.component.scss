@@ -1,0 +1,36 @@
+.login-img {
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    padding-top: 3%;
+}
+
+.img {
+    vertical-align: middle;
+    border-style: none;
+    width: 200px;
+    height: 200px;
+
+}
+
+.elipse-4 {
+    z-index: -1;
+    position: absolute;
+    width: 350px;
+    bottom: 0px;
+    right: 0px;
+    
+}
+
+.elipse-3 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 30em;
+}
+
+.elipse{
+    z-index: -1;
+    position: absolute;
+    top:0%;
+}

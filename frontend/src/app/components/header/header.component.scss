@@ -1,0 +1,29 @@
+header {
+    background-color: #bcc7ce;
+    color: white;
+    padding: 1em;
+  
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .header-logo {
+      height: 20px;
+    }
+
+    #logo{
+        width: 80px;
+    }
+  
+    #getIn{
+        width: 30px;
+        margin-right: 5px;
+    }
+    .txt{
+    color: #213F5C;
+    margin-right: 65%;
+    }
+}
+  

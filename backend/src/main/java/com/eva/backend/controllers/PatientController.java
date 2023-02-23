@@ -24,7 +24,6 @@ import com.eva.backend.entity.services.PatientServiceImpl;
 import javax.security.auth.message.callback.PrivateKeyCallback;
 
 @RestController
-
 @CrossOrigin(origins = "*")
 public class PatientController {
 
@@ -110,4 +109,16 @@ public class PatientController {
     public ResponseEntity<Resource> exportReport(@RequestParam int idP,@RequestParam  String history){
         return this.PatientServiceImpl.exportReport(idP,history);
     }
+
+    @GetMapping("/patients/exportPrescription")
+    public ResponseEntity<Resource> exportPrescription(){
+        return this.PatientServiceImpl.exportPrescription();
+    }
+
+    @GetMapping("/patients/printPrescription")
+    public ResponseEntity<Resource> printPrescription(@RequestParam String dniP){
+        return this.PatientServiceImpl.printPrescription(dniP);
+    }
+
 }
+

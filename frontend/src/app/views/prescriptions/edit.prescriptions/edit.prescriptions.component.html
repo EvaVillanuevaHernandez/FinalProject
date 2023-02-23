@@ -1,0 +1,54 @@
+<div class="container">
+  <form [formGroup]="prescriptionForm" (ngSubmit)="submit()">
+
+    <input type="text" formControlName="date" [(ngModel)]="date" placeholder="Prescription's DNI">
+    <div class="alert-danger"
+      *ngIf="datePrescription?.invalid && (datePrescription?.dirty || datePrescription?.touched)">
+      <div class="container-error-message" *ngIf="datePrescription?.errors?.['required']">
+        Prescription's Date required.
+      </div>
+    </div>
+
+    <input type="text" formControlName="medicine" [(ngModel)]="medicine" placeholder="Prescription's medicine">
+    <div class="alert-danger"
+      *ngIf="medicinePrescription?.invalid && (medicinePrescription?.dirty || medicinePrescription?.touched)">
+      <div class="container-error-message" *ngIf="medicinePrescription?.errors?.['required']">
+        Prescription's medicine required.
+      </div>
+      <div class="container-error-message" *ngIf="medicinePrescription?.errors?.['minlength']">
+        Prescription's medicine must have more than 2 characters.
+      </div>
+    </div>
+
+    <input type="text" formControlName="posology" [(ngModel)]="posology" placeholder="Prescription's posology">
+    <div class="alert-danger"
+      *ngIf="posologyPrescription?.invalid && (posologyPrescription?.dirty || posologyPrescription?.touched)">
+      <div class="container-error-message" *ngIf="posologyPrescription?.errors?.['required']">
+        Prescription's posology is required.
+      </div>
+      <div class="container-error-message" *ngIf="posologyPrescription?.errors?.['minlength']">
+        Prescription's posology must have more than 2 characters.
+      </div>
+    </div>
+
+    <select formControlName="doctor" [(ngModel)]="doctor" placeholder="Prescription's Doctor">
+      <option (change)="onChangeDoctor(i-1)" *ngFor="let d of doctor2, index as i" value={{d.id}}>{{d.name}}
+      </option>
+    </select>
+
+    <select formControlName="patient" [(ngModel)]="patient" placeholder="Prescription's Patient">
+      <option (change)="onChangePatient(i-1)" *ngFor="let p of patient2, index as i" value={{p.id}}>{{p.name}}
+      </option>
+    </select>
+    <div class="alert-danger"
+      *ngIf="patientPrescription?.invalid && (patientPrescription?.dirty || patientPrescription?.touched)">
+      <div class="container-error-message" *ngIf="patientPrescription?.errors?.['required']">
+        Prescription's patient is required.
+      </div>
+    </div>
+
+    <button type="submit" class="btn-send" [disabled]="!prescriptionForm.valid">Send</button>
+
+  </form>
+  <button class="btn-send" (click)="delete()">Delete</button>
+</div>

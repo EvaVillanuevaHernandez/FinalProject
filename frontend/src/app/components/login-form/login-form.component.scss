@@ -1,58 +1,39 @@
 .form-container {
-    max-width: 700px;
+    max-width: 500px;
     padding: 16px;
-    margin: 10px auto;
+    margin:  auto;
     background: transparent;
     text-align: center;
+ 
 }
 
-img {
-    background-color: #69747C;
-    border-radius: 10px;
-    margin: 0 0 2.5em 0;
-    width: 90%;
-    height: auto;
-}
 
 .btn-send {
     border-radius: 30px;
     width: 60%;
-    padding: 3%;
-    background: #F5F1ED;
-    color: black;
-    border: 1px solid black;
+    padding: 10px;
+    // background: #F5F1ED;
+    color: rgb(0, 0, 0);
+    border: 1px solid #A88A1E;
     font-size: 15px;
-    margin-top: 1em;
-    //-webkit-box-sizing: border-box;
-    //box-sizing: border-box;
-    // border-top-style: none;
-    // border-right-style: none;
-    // border-left-style: none;
+    margin-top: 5px;
+  
 }
 
 .btn-register {
     border-radius: 30px;
     width: 60%;
-    padding: 3%;
-    background: #F5F1ED;
+    padding: 10px;
+    background: none;
     color: black;
-    border: 1px solid black;
+    border: 1px solid #A88A1E;
     font-size: 15px;
 }
 
-/*.btn-send h1 {
-    background: #00C8FF;
-    padding: 20px 0;
-    font-size: 140%;
-    font-weight: 300;
-    text-align: center;
-    color: #721c24;
-    margin: -16px -16px 16px -16px;
-}*/
 
-.btn-send:hover:not([disabled]) {
-    background: #dcd8d4;
-}
+// .btn-send:hover:not([disabled]) {
+//     // background: #dcd8d4;
+// }
 
 input[type="text"],
 input[type="password"],
@@ -64,10 +45,10 @@ textarea {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     width: 100%;
-    background: #F5F1ED;
-    margin-bottom: 4%;
-    border: 1px solid black;
-    padding: 3%;
+     background: none;
+    margin-bottom: 15px;
+    border: 1px solid #9F73AB;
+    // padding: 3%;
     color: #555;
     font: 95% Arial, Helvetica, sans-serif;
 }
@@ -75,7 +56,8 @@ textarea {
 input[type="text"],
 input[type="password"],
 textarea :focus {
-    padding: 3%;
+    padding: 15px;
+    
 }
 
 .alert-danger {
@@ -92,8 +74,6 @@ textarea :focus {
     max-width: 1170px;
     margin-left: auto;
     margin-right: auto;
-    padding: 1.5em;
-    padding-bottom: 6em;
 }
 
 ul {

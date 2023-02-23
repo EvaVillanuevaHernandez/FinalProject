@@ -21,4 +21,8 @@ public interface IPatientService {
 
 
 	 ResponseEntity<Resource> exportReport(int idP, String history);
+
+  	ResponseEntity<Resource> exportPrescription();
+
+	 ResponseEntity<Resource> printPrescription(String dniP);
 }

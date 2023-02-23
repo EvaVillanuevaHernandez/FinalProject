@@ -56,13 +56,13 @@ public class AuthController {
 
 	  @PostMapping("/signin")
 	  public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
-//		  byte[] username = Base64.getDecoder().decode(loginRequest.getUsername());
-//		  String decodeUsername = new String(username);
-//		  byte[] password = Base64.getDecoder().decode(loginRequest.getPassword());
-//		  String decodePassword = new String(password);
+		  byte[] username = Base64.getDecoder().decode(loginRequest.getUsername());
+		  String decodeUsername = new String(username);
+		  byte[] password = Base64.getDecoder().decode(loginRequest.getPassword());
+		  String decodePassword = new String(password);
 
 	    Authentication authentication = authenticationManager.authenticate(
-	        new UsernamePasswordAuthenticationToken(/*decodeUsername */loginRequest.getUsername(), /*decodePassword*/loginRequest.getPassword()));
+	        new UsernamePasswordAuthenticationToken(decodeUsername /*loginRequest.getUsername()*/, decodePassword/*loginRequest.getPassword()*/));
 
 	    SecurityContextHolder.getContext().setAuthentication(authentication);
 	    String jwt = jwtUtils.generateJwtToken(authentication);
@@ -81,10 +81,10 @@ public class AuthController {
 
 	  @PostMapping("/signup")
 	  public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
-//		  byte[] username = Base64.getDecoder().decode(signUpRequest.getUsername());
-//		  String decodeUsername = new String(username);
-//		  byte[] password = Base64.getDecoder().decode(signUpRequest.getPassword());
-//		  String decodePassword = new String(password);
+		  byte[] username = Base64.getDecoder().decode(signUpRequest.getUsername());
+		  String decodeUsername = new String(username);
+		  byte[] password = Base64.getDecoder().decode(signUpRequest.getPassword());
+		  String decodePassword = new String(password);
 
 	    if (userRepository.existsByUsername(/*decodeUsername*/signUpRequest.getUsername())) {
 	      return ResponseEntity
@@ -119,11 +119,7 @@ public class AuthController {
 	          roles.add(adminRole);
 
 	          break;
-	        /*case "mod":
-	          Role modRole = roleRepository.findByName(ERole.ROLE_MODERATOR)
-	              .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-	          roles.add(modRole);
-	          break;*/
+
 	        default:
 	          Role userRole = roleRepository.findByName(ERole.ROLE_USER)
 	              .orElseThrow(() -> new RuntimeException("Error: Role is not found."));

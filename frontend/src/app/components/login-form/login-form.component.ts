@@ -5,8 +5,6 @@ import { LoginUser } from 'src/app/shared/models/login-user';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { StorageService } from 'src/app/shared/services/storage.service';
 
-
-
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
@@ -39,11 +37,11 @@ export class LoginFormComponent {
     });
   }
   ngOnInit(): void {
-    // this.updateAuthInfo();
+
     if (this.storage.getToken()) {
       this.isLoggedIn = true;
     }
-    // console.log(this.storage.getToken())
+ 
   }
 
   goRegister() {
@@ -67,7 +65,6 @@ export class LoginFormComponent {
           this.isLoginFailed = false;
           this.isLoggedIn = true;
           this.roles = this.storage.getUser().roles;
-          // console.log(this.roles)
           const perm: any[] = [this.roles];
           this.permissionsService.loadPermissions(perm);
           switch (this.roles.toString()) {

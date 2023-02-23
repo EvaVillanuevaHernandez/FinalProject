@@ -1,0 +1,41 @@
+<app-nav></app-nav>
+<div class="container-e">
+    <div class="card">
+        <div class="card-header">
+            <h3>Prescriptions</h3>
+            <button (click)="Add()" class="Add">Add prescription</button>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped" id="table" name="table" width="900" cellspacing="3" cellpadding="3" style="font-size: 15pt">
+                <thead>
+                    <tr>
+                        <th>Patient</th>
+                        <th>Doctor</th>
+                        <th>Date</th>
+                        <th>Medicine</th>
+                        <th>Posology</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let p of prescriptions" class="text-center">
+                        <td>{{p.patient.name}}</td>
+                        <td>{{p.doctor.name}}</td>
+                        <td>{{p.date}}</td>
+                        <td>{{p.medicine}}</td>
+                        <td>{{p.posology}}</td>
+                        <td>
+                            <button class="edit">
+                                <img src="../../../../assets/images/editing.png" alt="edit"class="edit" routerLink="/edit-patient/{{p.id}}"/>
+                                </button>
+    
+                                <button class="delete"  (click)="delete(p.id)">
+                                <img src="../../../../assets/images/delete.png" alt="delete"class="delete"/>
+                                </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
