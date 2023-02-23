@@ -1,4 +1,4 @@
-`<h1 align="center"> Medical Prescriptions</h1>
+<h1 align="center"> Medical Prescriptions</h1>
 
 ## Tabla de contenidos:
 ---
@@ -349,9 +349,6 @@ In summary, both Angular and React are viable options for developing hybrid nati
 
 Regarding the backend, using Spring Boot with a programming language already known to me as Java, it was easier for me to adapt and learn to build a backend with this tool.
 
----
-
-Translated with www.DeepL.com/Translator (free version)
 
 ---
 ## Planning 📋
@@ -388,5 +385,6 @@ In this project, I have learned to use different tools and technologies that hav
 ## Author :woman_technologist:
 
 - Eva Luna villanueva Hernández
+- Juan Alberto Trujillo Carballo
 
 ---
